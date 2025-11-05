@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Instagram } from "lucide-react";
+import { Instagram, Mail, MapPin, Phone } from "lucide-react";
 
 const FacebookIcon = (props: React.SVGProps<SVGSVGElement>) => (
   <svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
@@ -22,47 +22,40 @@ const WhatsAppIcon = (props: React.SVGProps<SVGSVGElement>) => (
 
 const footerLinks = {
   about: [
-    { title: "Nossa Missão", href: "#" },
-    { title: "Nossa História", href: "#" },
-    { title: "Nossa Equipe", href: "#" },
+    { title: "Quem Somos", href: "#" },
+    { title: "História", href: "#" },
+    { title: "Missão & Objetivos", href: "#" },
+    { title: "Estrutura", href: "#" },
   ],
   programs: [
     { title: "Educação", href: "#" },
     { title: "Pesquisa", href: "#" },
+    { title: "Extensão", href: "#" },
     { title: "Comunidade", href: "#" },
-  ],
-  resources: [
     { title: "Blog", href: "#" },
-    { title: "Publicações", href: "#" },
-    { title: "Eventos", href: "#" },
+    { title: "Recursos", href: "#" },
   ],
-  contact: [
-    { title: "Fale Conosco", href: "#" },
-    { title: "Apoie o NEABI", href: "#" },
-    { title: "FAQ", href: "#" },
+  institution: [
+    { title: "IFSULDEMINAS", href: "#" },
+    { title: "Campus Machado", href: "#" },
+    { title: "ABPN", href: "#" },
+    { title: "Fundação Palmares", href: "#" },
+    { title: "FUNAI", href: "#" },
   ],
 };
 
 export default function Footer() {
   return (
-    <footer className="bg-foreground text-background">
+    <footer className="bg-[#1a1a1a] text-[#f8f7f4] border-t border-[#e8e8e8]">
       <div className="container mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-2 gap-8 md:grid-cols-5">
-          <div className="col-span-2 md:col-span-1">
-            <Link href="#" className="text-2xl font-bold font-headline text-primary">
-              NEABI
-            </Link>
-            <p className="mt-2 text-sm text-muted-foreground">
-              Transformação Educacional e Equidade.
-            </p>
-          </div>
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
 
           <div>
-            <h3 className="font-accent font-bold tracking-wider text-sm uppercase text-muted-foreground">Sobre</h3>
-            <ul className="mt-4 space-y-2">
+            <h3 className="font-headline text-base font-bold text-primary mb-4">Sobre NEABI</h3>
+            <ul className="space-y-3">
               {footerLinks.about.map((link) => (
                 <li key={link.title}>
-                  <Link href={link.href} className="text-base hover:text-primary transition-colors">
+                  <Link href={link.href} className="text-sm text-[#f8f7f4] hover:text-primary transition-colors" style={{lineHeight: 1.8}}>
                     {link.title}
                   </Link>
                 </li>
@@ -71,11 +64,11 @@ export default function Footer() {
           </div>
           
           <div>
-            <h3 className="font-accent font-bold tracking-wider text-sm uppercase text-muted-foreground">Programas</h3>
-            <ul className="mt-4 space-y-2">
+            <h3 className="font-headline text-base font-bold text-primary mb-4">Programas & Recursos</h3>
+            <ul className="space-y-3">
               {footerLinks.programs.map((link) => (
                 <li key={link.title}>
-                  <Link href={link.href} className="text-base hover:text-primary transition-colors">
+                  <Link href={link.href} className="text-sm text-[#f8f7f4] hover:text-primary transition-colors" style={{lineHeight: 1.8}}>
                     {link.title}
                   </Link>
                 </li>
@@ -84,11 +77,11 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="font-accent font-bold tracking-wider text-sm uppercase text-muted-foreground">Recursos</h3>
-            <ul className="mt-4 space-y-2">
-              {footerLinks.resources.map((link) => (
+            <h3 className="font-headline text-base font-bold text-primary mb-4">Institucional</h3>
+            <ul className="space-y-3">
+              {footerLinks.institution.map((link) => (
                 <li key={link.title}>
-                  <Link href={link.href} className="text-base hover:text-primary transition-colors">
+                  <Link href={link.href} className="text-sm text-[#f8f7f4] hover:text-primary transition-colors" style={{lineHeight: 1.8}}>
                     {link.title}
                   </Link>
                 </li>
@@ -97,42 +90,43 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="font-accent font-bold tracking-wider text-sm uppercase text-muted-foreground">Conecte-se</h3>
-            <ul className="mt-4 space-y-2">
-              {footerLinks.contact.map((link) => (
-                <li key={link.title}>
-                  <Link href={link.href} className="text-base hover:text-primary transition-colors">
-                    {link.title}
-                  </Link>
+            <h3 className="font-headline text-base font-bold text-primary mb-4">Contato & Redes</h3>
+            <ul className="space-y-3 text-sm">
+                <li className="flex items-start gap-3">
+                    <Mail className="h-4 w-4 text-primary mt-1" />
+                    <span className="text-[#f8f7f4]">contato@neabi.edu.br</span>
                 </li>
-              ))}
+                <li className="flex items-start gap-3">
+                    <Phone className="h-4 w-4 text-primary mt-1" />
+                    <span className="text-[#f8f7f4]">(35) 3291-0000</span>
+                </li>
+                <li className="flex items-start gap-3">
+                    <MapPin className="h-4 w-4 text-primary mt-1 flex-shrink-0" />
+                    <span className="text-[#f8f7f4] leading-relaxed" style={{lineHeight: 1.6}}>IFSULDEMINAS<br/>R. Ituiutaba, 85<br/>Machado, MG 37750-000</span>
+                </li>
             </ul>
+            <div className="flex space-x-3 mt-4">
+                <Link href="#" className="text-primary hover:text-[#E67E22]"><span className="sr-only">Instagram</span><Instagram className="h-6 w-6" /></Link>
+                <Link href="#" className="text-primary hover:text-[#E67E22]"><span className="sr-only">Facebook</span><FacebookIcon className="h-6 w-6" /></Link>
+                <Link href="#" className="text-primary hover:text-[#E67E22]"><span className="sr-only">WhatsApp</span><WhatsAppIcon className="h-6 w-6" /></Link>
+                <Link href="#" className="text-primary hover:text-[#E67E22]"><span className="sr-only">Twitter</span><TwitterIcon className="h-6 w-6" /></Link>
+            </div>
           </div>
-
         </div>
 
-        <div className="mt-12 border-t border-border pt-8 flex flex-col sm:flex-row items-center justify-between">
-          <div className="flex space-x-6">
-            <Link href="#" className="text-muted-foreground hover:text-primary">
-              <span className="sr-only">Facebook</span>
-              <FacebookIcon className="h-6 w-6" />
-            </Link>
-            <Link href="#" className="text-muted-foreground hover:text-primary">
-              <span className="sr-only">Instagram</span>
-              <Instagram className="h-6 w-6" />
-            </Link>
-            <Link href="#" className="text-muted-foreground hover:text-primary">
-              <span className="sr-only">Twitter</span>
-              <TwitterIcon className="h-6 w-6" />
-            </Link>
-            <Link href="#" className="text-muted-foreground hover:text-primary">
-              <span className="sr-only">WhatsApp</span>
-              <WhatsAppIcon className="h-6 w-6" />
-            </Link>
-          </div>
-          <p className="mt-4 sm:mt-0 text-sm text-muted-foreground">
-            &copy; {new Date().getFullYear()} NEABI. Todos os direitos reservados.
-          </p>
+        <div className="mt-10 mb-6 h-[1px] bg-[#2d5016]"></div>
+
+        <div className="flex flex-col sm:flex-row items-center justify-between">
+            <p className="text-xs text-[#a0a0a0] text-center sm:text-left">
+                &copy; {new Date().getFullYear()} NEABI - Todos os direitos reservados
+            </p>
+            <div className="text-xs text-[#a0a0a0] mt-4 sm:mt-0">
+                <Link href="#" className="hover:underline text-primary">Política de Privacidade</Link>
+                <span className="mx-2">|</span>
+                <Link href="#" className="hover:underline text-primary">Termos de Uso</Link>
+                <span className="mx-2">|</span>
+                <Link href="#" className="hover:underline text-primary">Acessibilidade</Link>
+            </div>
         </div>
       </div>
     </footer>
