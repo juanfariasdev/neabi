@@ -2,49 +2,49 @@
   "placeholderImages": [
     {
       "id": "hero-bg",
-      "description": "A diverse group of students and community members at a cultural event, smiling and engaging with each other.",
+      "description": "Um grupo diversificado de estudantes e membros da comunidade em um evento cultural, sorrindo e interagindo uns com os outros.",
       "imageUrl": "https://images.unsplash.com/photo-1759906760182-8cd4a4fdcc66?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxjb21tdW5pdHklMjBjZWxlYnJhdGlvbnxlbnwwfHx8fDE3NjIzNDgwNzF8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "community celebration"
     },
     {
       "id": "program-1",
-      "description": "A classroom setting where a teacher is facilitating a discussion on anti-racist literature.",
+      "description": "Um ambiente de sala de aula onde um professor está facilitando uma discussão sobre literatura antirracista.",
       "imageUrl": "https://images.unsplash.com/photo-1759922378123-a1f4f1e39bae?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8ZWR1Y2F0aW9uJTIwY2xhc3Nyb29tfGVufDB8fHx8MTc2MjMyMDI0Mnww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "education classroom"
     },
     {
       "id": "program-2",
-      "description": "A researcher examining historical documents in a library archive.",
+      "description": "Um pesquisador examinando documentos históricos em um arquivo de biblioteca.",
       "imageUrl": "https://images.unsplash.com/photo-1761319114788-8a95ef1072f4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxyZXNlYXJjaCUyMGxpYnJhcnl8ZW58MHx8fHwxNzYyMzgwOTIxfDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "research library"
     },
     {
       "id": "program-3",
-      "description": "A community outreach event with people of all ages participating in an outdoor workshop.",
+      "description": "Um evento de alcance comunitário com pessoas de todas as idades participando de uma oficina ao ar livre.",
       "imageUrl": "https://images.unsplash.com/photo-1760939399262-d4d30d78a291?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxjb21tdW5pdHklMjB3b3Jrc2hvcHxlbnwwfHx8fDE3NjIzMTA0ODV8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "community workshop"
     },
     {
       "id": "program-4",
-      "description": "A vibrant mural depicting African and Indigenous art.",
+      "description": "Um mural vibrante retratando a arte africana e indígena.",
       "imageUrl": "https://images.unsplash.com/photo-1709999370336-c2497995ac27?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxpbmRpZ2Vub3VzJTIwYXJ0fGVufDB8fHx8MTc2MjM4MDkyMXww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "indigenous art"
     },
     {
       "id": "testimonial-1",
-      "description": "Profile picture of a female student with a warm smile.",
+      "description": "Foto de perfil de uma estudante com um sorriso caloroso.",
       "imageUrl": "https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxzbWlsaW5nJTIwc3R1ZGVudHxlbnwwfHx8fDE3NjIzMzc4ODJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "smiling student"
     },
     {
       "id": "testimonial-2",
-      "description": "Profile picture of a male professor in his office.",
+      "description": "Foto de perfil de um professor em seu escritório.",
       "imageUrl": "https://images.unsplash.com/photo-1758685848426-fcff62c9fd64?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8bWFsZSUyMHByb2Zlc3NvcnxlbnwwfHx8fDE3NjIzODA5MjF8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "male professor"
     },
     {
       "id": "testimonial-3",
-      "description": "Profile picture of a non-binary person in a professional setting.",
+      "description": "Foto de perfil de uma pessoa não-binária em um ambiente profissional.",
       "imageUrl": "https://images.unsplash.com/photo-1590650213165-c1fef80648c4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxwcm9mZXNzaW9uYWwlMjBwZXJzb258ZW58MHx8fHwxNzYyMzQyMDYyfDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "professional person"
     }

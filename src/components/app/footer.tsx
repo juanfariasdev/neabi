@@ -22,23 +22,23 @@ const WhatsAppIcon = (props: React.SVGProps<SVGSVGElement>) => (
 
 const footerLinks = {
   about: [
-    { title: "Our Mission", href: "#" },
-    { title: "Our History", href: "#" },
-    { title: "Our Team", href: "#" },
+    { title: "Nossa Missão", href: "#" },
+    { title: "Nossa História", href: "#" },
+    { title: "Nossa Equipe", href: "#" },
   ],
   programs: [
-    { title: "Education", href: "#" },
-    { title: "Research", href: "#" },
-    { title: "Community", href: "#" },
+    { title: "Educação", href: "#" },
+    { title: "Pesquisa", href: "#" },
+    { title: "Comunidade", href: "#" },
   ],
   resources: [
     { title: "Blog", href: "#" },
-    { title: "Publications", href: "#" },
-    { title: "Events", href: "#" },
+    { title: "Publicações", href: "#" },
+    { title: "Eventos", href: "#" },
   ],
   contact: [
-    { title: "Contact Us", href: "#" },
-    { title: "Support NEABI", href: "#" },
+    { title: "Fale Conosco", href: "#" },
+    { title: "Apoie o NEABI", href: "#" },
     { title: "FAQ", href: "#" },
   ],
 };
@@ -53,12 +53,12 @@ export default function Footer() {
               NEABI
             </Link>
             <p className="mt-2 text-sm text-muted-foreground">
-              Educational Transformation and Equity.
+              Transformação Educacional e Equidade.
             </p>
           </div>
 
           <div>
-            <h3 className="font-accent font-bold tracking-wider text-sm uppercase text-muted-foreground">About</h3>
+            <h3 className="font-accent font-bold tracking-wider text-sm uppercase text-muted-foreground">Sobre</h3>
             <ul className="mt-4 space-y-2">
               {footerLinks.about.map((link) => (
                 <li key={link.title}>
@@ -71,7 +71,7 @@ export default function Footer() {
           </div>
           
           <div>
-            <h3 className="font-accent font-bold tracking-wider text-sm uppercase text-muted-foreground">Programs</h3>
+            <h3 className="font-accent font-bold tracking-wider text-sm uppercase text-muted-foreground">Programas</h3>
             <ul className="mt-4 space-y-2">
               {footerLinks.programs.map((link) => (
                 <li key={link.title}>
@@ -84,7 +84,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="font-accent font-bold tracking-wider text-sm uppercase text-muted-foreground">Resources</h3>
+            <h3 className="font-accent font-bold tracking-wider text-sm uppercase text-muted-foreground">Recursos</h3>
             <ul className="mt-4 space-y-2">
               {footerLinks.resources.map((link) => (
                 <li key={link.title}>
@@ -97,7 +97,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="font-accent font-bold tracking-wider text-sm uppercase text-muted-foreground">Connect</h3>
+            <h3 className="font-accent font-bold tracking-wider text-sm uppercase text-muted-foreground">Conecte-se</h3>
             <ul className="mt-4 space-y-2">
               {footerLinks.contact.map((link) => (
                 <li key={link.title}>
@@ -131,7 +131,7 @@ export default function Footer() {
             </Link>
           </div>
           <p className="mt-4 sm:mt-0 text-sm text-muted-foreground">
-            &copy; {new Date().getFullYear()} NEABI. All rights reserved.
+            &copy; {new Date().getFullYear()} NEABI. Todos os direitos reservados.
           </p>
         </div>
       </div>

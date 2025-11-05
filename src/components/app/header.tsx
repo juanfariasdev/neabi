@@ -8,11 +8,11 @@ import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { cn } from '@/lib/utils';
 
 const navLinks = [
-  { name: 'Home', href: '#' },
-  { name: 'About', href: '#' },
-  { name: 'Programs', href: '#' },
-  { name: 'Research', href: '#' },
-  { name: 'Events', href: '#' },
+  { name: 'Início', href: '#' },
+  { name: 'Sobre', href: '#' },
+  { name: 'Programas', href: '#' },
+  { name: 'Pesquisa', href: '#' },
+  { name: 'Eventos', href: '#' },
   { name: 'Blog', href: '#' },
 ];
 
@@ -56,7 +56,7 @@ export default function Header() {
           <div className="flex items-center space-x-4">
             <Button variant="ghost" size="icon" className="hidden lg:inline-flex">
               <Search className="h-5 w-5" />
-              <span className="sr-only">Search</span>
+              <span className="sr-only">Pesquisar</span>
             </Button>
             
             <div className="lg:hidden">
@@ -64,7 +64,7 @@ export default function Header() {
                 <SheetTrigger asChild>
                   <Button variant="ghost" size="icon">
                     <Menu className="h-6 w-6" />
-                    <span className="sr-only">Open menu</span>
+                    <span className="sr-only">Abrir menu</span>
                   </Button>
                 </SheetTrigger>
                 <SheetContent side="right" className="w-[300px] bg-background">
@@ -87,7 +87,7 @@ export default function Header() {
                      <div className="mt-auto flex items-center justify-center">
                         <Button variant="ghost" size="icon">
                         <Search className="h-6 w-6" />
-                        <span className="sr-only">Search</span>
+                        <span className="sr-only">Pesquisar</span>
                         </Button>
                     </div>
                   </div>

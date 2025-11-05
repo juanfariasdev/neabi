@@ -3,10 +3,10 @@
 import { useState, useEffect, useRef } from 'react';
 
 const stats = [
-  { value: 100, suffix: "+", label: "NEABIs Nationwide" },
-  { value: 66, suffix: "", label: "Years of History" },
-  { value: 10000, suffix: "+", label: "Students Supported" },
-  { value: 40, suffix: "+", label: "Research Publications" },
+  { value: 100, suffix: "+", label: "NEABIs em todo o país" },
+  { value: 66, suffix: "", label: "Anos de História" },
+  { value: 10000, suffix: "+", label: "Alunos Apoiados" },
+  { value: 40, suffix: "+", label: "Publicações de Pesquisa" },
 ];
 
 const Counter = ({ to, suffix }: { to: number, suffix: string }) => {

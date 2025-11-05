@@ -17,27 +17,27 @@ import { PlaceHolderImages } from "@/lib/placeholder-images"
 const programs = [
   {
     id: "program-1",
-    title: "Antiracist Pedagogy Workshop",
-    category: "Education",
-    description: "A workshop series for educators on implementing antiracist strategies in the classroom.",
+    title: "Oficina de Pedagogia Antirracista",
+    category: "Educação",
+    description: "Uma série de oficinas para educadores sobre a implementação de estratégias antirracistas na sala de aula.",
   },
   {
     id: "program-2",
-    title: "Indigenous Histories Project",
-    category: "Research",
-    description: "A research initiative focused on preserving and sharing the oral histories of local Indigenous communities.",
+    title: "Projeto Histórias Indígenas",
+    category: "Pesquisa",
+    description: "Uma iniciativa de pesquisa focada em preservar e compartilhar as histórias orais de comunidades indígenas locais.",
   },
   {
     id: "program-3",
-    title: "Community Cinema Circle",
-    category: "Extension",
-    description: "Monthly screenings and discussions of films by Black and Indigenous directors.",
+    title: "Círculo Comunitário de Cinema",
+    category: "Extensão",
+    description: "Exibições mensais e debates de filmes de diretores negros e indígenas.",
   },
   {
     id: "program-4",
-    title: "Art & Resistance Festival",
-    category: "Community",
-    description: "An annual festival celebrating cultural expression as a form of resistance and resilience.",
+    title: "Festival Arte & Resistência",
+    category: "Comunidade",
+    description: "Um festival anual que celebra a expressão cultural como forma de resistência e resiliência.",
   },
 ]
 
@@ -46,8 +46,8 @@ export default function ProgramsCarousel() {
     <section className="w-full py-20 md:py-32 bg-secondary">
       <div className="container mx-auto max-w-7xl px-4">
         <div className="text-center mb-12">
-          <h2 className="font-headline text-3xl font-bold tracking-tight text-foreground md:text-4xl lg:text-5xl">Flagship Programs</h2>
-          <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">Explore some of our key initiatives driving change in education and community engagement.</p>
+          <h2 className="font-headline text-3xl font-bold tracking-tight text-foreground md:text-4xl lg:text-5xl">Programas Principais</h2>
+          <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">Explore algumas de nossas principais iniciativas que impulsionam a mudança na educação e no engajamento comunitário.</p>
         </div>
         <Carousel
           opts={{
@@ -80,7 +80,7 @@ export default function ProgramsCarousel() {
                           <h3 className="font-headline text-xl font-bold">{program.title}</h3>
                           <p className="mt-2 text-muted-foreground h-20">{program.description}</p>
                           <Button asChild variant="link" className="p-0 mt-4 font-accent font-bold text-primary">
-                            <Link href="#">Learn More &rarr;</Link>
+                            <Link href="#">Saiba Mais &rarr;</Link>
                           </Button>
                         </div>
                       </CardContent>

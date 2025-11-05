@@ -4,23 +4,23 @@ import { BookOpen, FlaskConical, Users, Building2 } from "lucide-react";
 const pillars = [
   {
     icon: <BookOpen className="h-10 w-10 text-primary" />,
-    title: "Education",
-    description: "Promoting antiracist teaching practices and developing inclusive curricula to transform educational environments."
+    title: "Educação",
+    description: "Promovendo práticas de ensino antirracistas e desenvolvendo currículos inclusivos para transformar ambientes educacionais."
   },
   {
     icon: <FlaskConical className="h-10 w-10 text-primary" />,
-    title: "Research",
-    description: "Advancing knowledge on ethnic-racial relations, and the history and culture of African, Afro-Brazilian and Indigenous peoples."
+    title: "Pesquisa",
+    description: "Avançando o conhecimento sobre relações étnico-raciais e a história e cultura dos povos africanos, afro-brasileiros e indígenas."
   },
   {
     icon: <Users className="h-10 w-10 text-primary" />,
-    title: "Extension",
-    description: "Engaging with the wider community through workshops, courses, and cultural events to promote dialogue and social change."
+    title: "Extensão",
+    description: "Engajando-se com a comunidade em geral através de oficinas, cursos e eventos culturais para promover o diálogo e a mudança social."
   },
   {
     icon: <Building2 className="h-10 w-10 text-primary" />,
-    title: "Community",
-    description: "Building inclusive and welcoming spaces for students, educators, and community members to connect, learn, and grow together."
+    title: "Comunidade",
+    description: "Construindo espaços inclusivos e acolhedores para estudantes, educadores e membros da comunidade se conectarem, aprenderem e crescerem juntos."
   }
 ];
 
@@ -29,8 +29,8 @@ export default function PillarsSection() {
     <section className="w-full py-20 md:py-32 bg-background">
       <div className="container mx-auto max-w-7xl px-4">
         <div className="text-center mb-12">
-          <h2 className="font-headline text-3xl font-bold tracking-tight text-foreground md:text-4xl lg:text-5xl">Our Four Pillars of Action</h2>
-          <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">NEABI's work is structured around four interconnected pillars that guide our mission for equity and justice.</p>
+          <h2 className="font-headline text-3xl font-bold tracking-tight text-foreground md:text-4xl lg:text-5xl">Nossos Quatro Pilares de Ação</h2>
+          <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">O trabalho do NEABI está estruturado em torno de quatro pilares interconectados que guiam nossa missão por equidade e justiça.</p>
         </div>
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {pillars.map((pillar) => (

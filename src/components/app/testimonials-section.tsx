@@ -15,21 +15,21 @@ import { PlaceHolderImages } from "@/lib/placeholder-images"
 const testimonials = [
   {
     id: "testimonial-1",
-    quote: "NEABI provided a space where I felt seen and heard. It was crucial for my academic journey and my personal growth as a Black woman in university.",
+    quote: "O NEABI proporcionou um espaço onde me senti vista e ouvida. Foi crucial para minha jornada acadêmica e meu crescimento pessoal como mulher negra na universidade.",
     name: "Mariana Santos",
-    role: "History Student",
+    role: "Estudante de História",
   },
   {
     id: "testimonial-2",
-    quote: "The research and resources from NEABI have been invaluable for my teaching practice. It's transformed how I approach discussions on race and history.",
+    quote: "A pesquisa e os recursos do NEABI foram inestimáveis para minha prática docente. Transformou a forma como abordo as discussões sobre raça e história.",
     name: "Dr. Carlos Silva",
-    role: "Professor of Education",
+    role: "Professor de Educação",
   },
   {
     id: "testimonial-3",
-    quote: "Being part of the NEABI community connected me with incredible people and opened my eyes to the importance of Indigenous knowledge systems.",
+    quote: "Fazer parte da comunidade NEABI me conectou com pessoas incríveis e abriu meus olhos para a importância dos sistemas de conhecimento indígenas.",
     name: "Aiyra Pataxó",
-    role: "Community Member & Artisan",
+    role: "Membro da Comunidade e Artesã",
   },
 ];
 
@@ -38,8 +38,8 @@ export default function TestimonialsSection() {
     <section className="w-full py-20 md:py-32 bg-background">
       <div className="container mx-auto max-w-5xl px-4">
         <div className="text-center mb-12">
-          <h2 className="font-headline text-3xl font-bold tracking-tight text-foreground md:text-4xl lg:text-5xl">Voices of Our Community</h2>
-          <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">Hear directly from those who have been part of our journey.</p>
+          <h2 className="font-headline text-3xl font-bold tracking-tight text-foreground md:text-4xl lg:text-5xl">Vozes da Nossa Comunidade</h2>
+          <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">Ouça diretamente daqueles que fizeram parte da nossa jornada.</p>
         </div>
         <Carousel
           opts={{
