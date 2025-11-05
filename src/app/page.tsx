@@ -1,5 +1,6 @@
 import Header from '@/components/app/header';
 import HeroSection from '@/components/app/hero-section';
+import WelcomeSection from '@/components/app/welcome-section';
 import PillarsSection from '@/components/app/pillars-section';
 import StatsSection from '@/components/app/stats-section';
 import ProgramsCarousel from '@/components/app/programs-carousel';
@@ -13,6 +14,7 @@ export default function Home() {
       <Header />
       <main className="flex-1">
         <HeroSection />
+        <WelcomeSection />
         <PillarsSection />
         <StatsSection />
         <ProgramsCarousel />

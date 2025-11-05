@@ -7,6 +7,12 @@
       "imageHint": "community celebration"
     },
     {
+      "id": "welcome-community",
+      "description": "Uma foto calorosa de uma comunidade diversificada ou um evento educacional, representando união e aprendizado.",
+      "imageUrl": "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxlZHVjYXRpb24lMjBjb21tdW5pdHl8ZW58MHx8fHwxNzYzNzQwNzgxfDA&ixlib=rb-4.1.0&q=80&w=600",
+      "imageHint": "education community"
+    },
+    {
       "id": "program-1",
       "description": "Um ambiente de sala de aula onde um professor está facilitando uma discussão sobre literatura antirracista.",
       "imageUrl": "https://images.unsplash.com/photo-1759922378123-a1f4f1e39bae?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8ZWR1Y2F0aW9uJTIwY2xhc3Nyb29tfGVufDB8fHx8MTc2MjMyMDI0Mnww&ixlib=rb-4.1.0&q=80&w=1080",
@@ -27,7 +33,7 @@
     {
       "id": "program-4",
       "description": "Um mural vibrante retratando a arte africana e indígena.",
-      "imageUrl": "https://images.unsplash.com/photo-1709999370336-c2497995ac27?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxpbmRpZ2Vub3VzJTIwYXJ0fGVufDB8fHx8MTc2MjM4MDkyMXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1709999370336-c2497995ac27?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxpbmRpZ2Vub3VzJTIwYXJ0fGVufDB8fHx8fDE3NjIzODA5MjF8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "indigenous art"
     },
     {
