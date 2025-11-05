@@ -6,6 +6,9 @@ import StatsSection from '@/components/app/stats-section';
 import WhatNeabiDoes from '@/components/app/what-neabi-does';
 import ProgramsCarousel from '@/components/app/programs-carousel';
 import TestimonialsSection from '@/components/app/testimonials-section';
+import EducationalResources from '@/components/app/educational-resources-section';
+import BlogSection from '@/components/app/blog-section';
+import EventsSection from '@/components/app/events-section';
 import CtaSection from '@/components/app/cta-section';
 import Footer from '@/components/app/footer';
 
@@ -21,6 +24,9 @@ export default function Home() {
         <WhatNeabiDoes />
         <ProgramsCarousel />
         <TestimonialsSection />
+        <EducationalResources />
+        <BlogSection />
+        <EventsSection />
         <CtaSection />
       </main>
       <Footer />

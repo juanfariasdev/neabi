@@ -53,6 +53,24 @@
       "description": "Foto de perfil de uma pessoa não-binária em um ambiente profissional.",
       "imageUrl": "https://images.unsplash.com/photo-1590650213165-c1fef80648c4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxwcm9mZXNzaW9uYWwlMjBwZXJzb258ZW58MHx8fHwxNzYyMzQyMDYyfDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "professional person"
+    },
+    {
+      "id": "blog-post-1",
+      "description": "Telas de TV e cinema mostrando uma variedade de rostos e culturas.",
+      "imageUrl": "https://images.unsplash.com/photo-1650447973233-89e3971e1568?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxtZWRpYSUyMHJlcHJlc2VudGF0aW9ufGVufDB8fHx8MTc2MjM4MjA4M3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "media representation"
+    },
+    {
+      "id": "blog-post-2",
+      "description": "Uma sala de aula com um professor discutindo história com os alunos.",
+      "imageUrl": "https://images.unsplash.com/photo-1566831453303-34a2c76ec34f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxoaXN0b3J5JTIwY2xhc3Nyb29tfGVufDB8fHx8MTc2MjM4MjA4M3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "history classroom"
+    },
+    {
+      "id": "blog-post-3",
+      "description": "Uma vila histórica com casas de estilo colonial e pessoas em trajes tradicionais.",
+      "imageUrl": "https://images.unsplash.com/photo-1662020954832-54990e5064bd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8aGlzdG9yaWMlMjB2aWxsYWdlfGVufDB8fHx8MTc2MjM4MjA4M3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "historic village"
     }
   ]
 }
