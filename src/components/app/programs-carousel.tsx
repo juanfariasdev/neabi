@@ -44,10 +44,10 @@ const programs = [
 
 export default function ProgramsCarousel() {
   return (
-    <section className="w-full bg-[#f8f7f4] py-16 md:py-20 px-10 md:px-20">
-      <div className="container mx-auto max-w-7xl px-4">
+    <section id="programs-carousel" className="w-full bg-cream-bg py-12 md:py-16 lg:py-20">
+      <div className="container mx-auto max-w-7xl px-6 md:px-12 lg:px-16">
         <div className="text-center mb-12">
-          <h2 className="font-headline text-3xl font-bold tracking-tight text-[#1a1a1a] md:text-5xl">Conheça Nossos Programas</h2>
+          <h2 className="font-headline text-3xl md:text-4xl lg:text-5xl font-bold text-dark-bg">Conheça Nossos Programas</h2>
         </div>
         <Carousel
           opts={{
@@ -62,14 +62,14 @@ export default function ProgramsCarousel() {
           ]}
           className="w-full"
         >
-          <CarouselContent>
+          <CarouselContent className="-ml-4">
             {programs.map((program) => {
               const image = PlaceHolderImages.find((img) => img.id === program.id);
               return (
-                <CarouselItem key={program.id} className="md:basis-1/2 lg:basis-1/3">
+                <CarouselItem key={program.id} className="pl-4 md:basis-1/2 lg:basis-1/3">
                   <div className="p-1 h-full">
-                    <Card className="overflow-hidden group h-full flex flex-col rounded-xl shadow-[0_8px_24px_rgba(0,0,0,0.1)] transition-shadow duration-300 hover:shadow-2xl">
-                      <div className="relative w-full h-40 md:h-52">
+                    <Card className="bg-white rounded-lg shadow-md overflow-hidden group h-full flex flex-col transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+                      <div className="relative w-full aspect-video">
                         {image && (
                           <Image
                             src={image.imageUrl}
@@ -81,12 +81,12 @@ export default function ProgramsCarousel() {
                         )}
                       </div>
                       <CardContent className="flex flex-col items-start p-6 flex-1">
-                          <Badge variant="default" className="mb-3 inline-block rounded-full bg-[#D4AF37] px-3 py-1.5 text-xs font-bold uppercase tracking-wider text-[#1a1a1a]">
+                          <Badge variant="default" className="mb-3 inline-block rounded-full bg-gold px-3 py-1 text-xs font-bold uppercase tracking-wider text-dark-bg">
                             {program.category}
                           </Badge>
-                          <h3 className="font-headline text-lg md:text-xl font-bold text-[#1a1a1a] mb-3">{program.title}</h3>
-                          <p className="font-body text-sm text-[#1a1a1a]/80 leading-relaxed mb-4 flex-1" style={{ maxHeight: '80px', overflow: 'hidden' }}>{program.description}</p>
-                          <Button asChild size="sm" className="mt-auto font-accent font-bold bg-[#D4AF37] text-[#1a1a1a] hover:bg-[#D4AF37]/90 px-5 py-2.5 rounded">
+                          <h3 className="font-headline text-xl md:text-2xl font-semibold text-dark-bg mb-3 leading-snug">{program.title}</h3>
+                          <p className="text-base text-gray-800 leading-relaxed mb-4 flex-1">{program.description}</p>
+                          <Button asChild size="sm" className="mt-auto font-accent font-semibold bg-gold text-dark-bg hover:bg-gold/90 px-5 py-2.5 rounded">
                             <Link href="#">Conheça o Programa</Link>
                           </Button>
                       </CardContent>
@@ -96,8 +96,8 @@ export default function ProgramsCarousel() {
               )
             })}
           </CarouselContent>
-          <CarouselPrevious className="ml-10 text-[#D4AF37]" />
-          <CarouselNext className="mr-10 text-[#D4AF37]" />
+          <CarouselPrevious className="ml-10 text-gold hover:bg-gold hover:text-dark-bg" />
+          <CarouselNext className="mr-10 text-gold hover:bg-gold hover:text-dark-bg" />
         </Carousel>
       </div>
     </section>

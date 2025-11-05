@@ -21,17 +21,17 @@ const WhatsAppIcon = (props: React.SVGProps<SVGSVGElement>) => (
   
 const infoCards = [
     {
-      icon: <Mail className="h-8 w-8 text-black" />,
+      icon: <Mail className="h-6 w-6 text-gold" />,
       title: 'Email',
       text: 'contato@neabi.edu.br',
     },
     {
-      icon: <Phone className="h-8 w-8 text-black" />,
+      icon: <Phone className="h-6 w-6 text-gold" />,
       title: 'Telefone',
       text: '(35) 3291-0000',
     },
     {
-      icon: <MapPin className="h-8 w-8 text-black" />,
+      icon: <MapPin className="h-6 w-6 text-gold" />,
       title: 'Endereço',
       text: 'IFSULDEMINAS Campus Machado\nR. Ituiutaba, 85 - Machado, MG',
     },
@@ -39,32 +39,32 @@ const infoCards = [
 
 export default function ContactSection() {
     return (
-        <section className="w-full bg-gradient-to-r from-[#D4AF37] to-[#E67E22] py-20 md:py-24">
-            <div className="container mx-auto max-w-7xl px-4">
+        <section className="w-full bg-gradient-to-r from-gold to-warm-orange py-12 md:py-16 lg:py-20">
+            <div className="container mx-auto max-w-7xl px-6 md:px-12 lg:px-16">
                 <div className="text-center mb-12">
-                    <h2 className="font-headline text-3xl md:text-5xl font-bold tracking-tight text-[#f8f7f4]">
+                    <h2 className="font-headline text-3xl md:text-4xl lg:text-5xl font-bold text-cream-bg">
                         Quer Fazer Parte da Transformação?
                     </h2>
                 </div>
-                <div className="grid lg:grid-cols-2 gap-12 items-start">
-                    <div className="text-black">
-                        <h3 className="font-accent text-2xl font-bold mb-6 text-[#1a1a1a]">Fale Conosco</h3>
+                <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-start">
+                    <div className="text-dark-bg">
+                        <h3 className="font-accent text-2xl md:text-3xl font-bold mb-6">Fale Conosco</h3>
                         <div className="space-y-6">
                             {infoCards.map(card => (
                                 <div key={card.title} className="flex items-start gap-4">
                                     {card.icon}
                                     <div>
-                                        <h4 className="font-accent font-bold text-base text-[#1a1a1a]">{card.title}</h4>
-                                        <p className="font-body text-sm text-[#1a1a1a] whitespace-pre-line">{card.text}</p>
+                                        <h4 className="font-accent font-bold text-lg text-dark-bg">{card.title}</h4>
+                                        <p className="text-base text-dark-bg whitespace-pre-line leading-relaxed">{card.text}</p>
                                     </div>
                                 </div>
                             ))}
                         </div>
                         <div className="flex space-x-4 mt-8">
-                            <a href="#" aria-label="Instagram"><Instagram className="h-8 w-8 text-black" /></a>
-                            <a href="#" aria-label="Facebook"><FacebookIcon className="h-8 w-8 text-black" /></a>
-                            <a href="#" aria-label="WhatsApp"><WhatsAppIcon className="h-8 w-8 text-black" /></a>
-                            <a href="#" aria-label="Twitter"><TwitterIcon className="h-8 w-8 text-black" /></a>
+                            <a href="#" aria-label="Instagram"><Instagram className="h-8 w-8 text-dark-bg hover:text-cream-bg transition-colors" /></a>
+                            <a href="#" aria-label="Facebook"><FacebookIcon className="h-8 w-8 text-dark-bg hover:text-cream-bg transition-colors" /></a>
+                            <a href="#" aria-label="WhatsApp"><WhatsAppIcon className="h-8 w-8 text-dark-bg hover:text-cream-bg transition-colors" /></a>
+                            <a href="#" aria-label="Twitter"><TwitterIcon className="h-8 w-8 text-dark-bg hover:text-cream-bg transition-colors" /></a>
                         </div>
                     </div>
                     <ContactForm />
