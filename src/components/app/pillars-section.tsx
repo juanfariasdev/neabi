@@ -1,48 +1,50 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { BookOpen, FlaskConical, Users, Building2 } from "lucide-react";
+import { BookOpen, FlaskConical, Users, Handshake, Building2 } from "lucide-react";
 
 const pillars = [
   {
-    icon: <BookOpen className="h-10 w-10 text-primary" />,
+    icon: <BookOpen className="h-12 w-12 text-[#D4AF37]" />,
     title: "Educação",
-    description: "Promovendo práticas de ensino antirracistas e desenvolvendo currículos inclusivos para transformar ambientes educacionais."
+    description: "Promover encontros de reflexão, capacitação e ensino sobre história e culturas africanas, afro-brasileiras e indígenas para transformar práticas educacionais.",
+    bgColor: "bg-[#2d5016]"
   },
   {
-    icon: <FlaskConical className="h-10 w-10 text-primary" />,
+    icon: <FlaskConical className="h-12 w-12 text-[#D4AF37]" />,
     title: "Pesquisa",
-    description: "Avançando o conhecimento sobre relações étnico-raciais e a história e cultura dos povos africanos, afro-brasileiros e indígenas."
+    description: "Fomentar estudos multi, inter e transdisciplinares sobre relações étnico-raciais, publicando resultados que ampliem o conhecimento acadêmico e comunitário.",
+    bgColor: "bg-[#8B4513]"
   },
   {
-    icon: <Users className="h-10 w-10 text-primary" />,
+    icon: <Handshake className="h-12 w-12 text-[#D4AF37]" />,
     title: "Extensão",
-    description: "Engajando-se com a comunidade em geral através de oficinas, cursos e eventos culturais para promover o diálogo e a mudança social."
+    description: "Levar conhecimento e ações para comunidades, escolas e espaços públicos, criando diálogos permanentes com população negra, indígena, quilombola e urbana.",
+    bgColor: "bg-[#1f3a70]"
   },
   {
-    icon: <Building2 className="h-10 w-10 text-primary" />,
+    icon: <Users className="h-12 w-12 text-[#D4AF37]" />,
     title: "Comunidade",
-    description: "Construindo espaços inclusivos e acolhedores para estudantes, educadores e membros da comunidade se conectarem, aprenderem e crescerem juntos."
+    description: "Criar espaços acolhedores para integração entre estudantes, professores e comunidades, promovendo diálogos e fortalecendo laços para transformação coletiva.",
+    bgColor: "bg-[#8B4513]"
   }
 ];
 
 export default function PillarsSection() {
   return (
-    <section className="w-full py-20 md:py-32 bg-background">
+    <section className="w-full bg-[#1a1a1a] text-[#f8f7f4] py-16 md:py-20">
       <div className="container mx-auto max-w-7xl px-4">
-        <div className="text-center mb-12">
-          <h2 className="font-headline text-3xl font-bold tracking-tight text-foreground md:text-4xl lg:text-5xl">Nossos Quatro Pilares de Ação</h2>
-          <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">O trabalho do NEABI está estruturado em torno de quatro pilares interconectados que guiam nossa missão por equidade e justiça.</p>
+        <div className="text-center mb-12 lg:mb-16">
+          <h2 className="font-headline text-3xl font-bold tracking-tight text-[#D4AF37] md:text-5xl">Os 4 Pilares do NEABI</h2>
+          <p className="mt-4 max-w-2xl mx-auto text-base md:text-lg text-[#f8f7f4]">Atuamos em áreas estratégicas para a transformação educacional</p>
         </div>
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {pillars.map((pillar) => (
-            <Card key={pillar.title} className="text-center group hover:shadow-xl transition-shadow duration-300">
-              <CardHeader className="items-center">
-                <div className="rounded-full bg-primary/10 p-4 transition-transform duration-300 group-hover:scale-110">
+            <Card key={pillar.title} className={`${pillar.bgColor} text-[#f8f7f4] border-l-4 border-[#D4AF37] rounded-lg shadow-lg transition-all duration-300 ease-in-out hover:shadow-2xl hover:-translate-y-1`}>
+              <CardContent className="p-9">
+                 <div className="mb-5">
                   {pillar.icon}
                 </div>
-              </CardHeader>
-              <CardContent>
-                <CardTitle className="font-headline text-2xl mb-2">{pillar.title}</CardTitle>
-                <p className="text-muted-foreground">{pillar.description}</p>
+                <h3 className="font-headline text-2xl md:text-3xl font-bold mb-4">{pillar.title}</h3>
+                <p className="font-body text-sm leading-relaxed opacity-95">{pillar.description}</p>
               </CardContent>
             </Card>
           ))}

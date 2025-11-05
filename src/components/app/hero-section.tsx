@@ -27,10 +27,10 @@ export default function HeroSection() {
           Conheça o Núcleo de Estudos Afro-Brasileiros e Indígenas
         </p>
         <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-          <Button asChild size="lg" className="font-accent font-bold bg-[#D4AF37] text-[#1a1a1a] hover:bg-[#D4AF37]/90 px-8 py-3.5">
+          <Button asChild size="lg" className="font-accent font-bold bg-[#D4AF37] text-[#1a1a1a] hover:bg-[#D4AF37]/90 px-8 py-3.5 rounded-sm">
             <Link href="#">Conheça Nossos Programas</Link>
           </Button>
-          <Button asChild variant="outline" size="lg" className="font-accent font-bold border-[#D4AF37] text-[#D4AF37] hover:bg-[#D4AF37]/10 hover:text-[#D4AF37] px-8 py-3.5">
+          <Button asChild variant="outline" size="lg" className="font-accent font-bold border-[#D4AF37] text-[#D4AF37] hover:bg-[#D4AF37]/10 hover:text-[#D4AF37] px-8 py-3.5 rounded-sm">
             <Link href="#">Saiba Mais</Link>
           </Button>
         </div>
