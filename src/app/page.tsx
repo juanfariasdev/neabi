@@ -9,7 +9,8 @@ import TestimonialsSection from '@/components/app/testimonials-section';
 import EducationalResources from '@/components/app/educational-resources-section';
 import BlogSection from '@/components/app/blog-section';
 import EventsSection from '@/components/app/events-section';
-import CtaSection from '@/components/app/cta-section';
+import ContactSection from '@/components/app/contact-section';
+import NewsletterSection from '@/components/app/newsletter-section';
 import Footer from '@/components/app/footer';
 
 export default function Home() {
@@ -27,7 +28,8 @@ export default function Home() {
         <EducationalResources />
         <BlogSection />
         <EventsSection />
-        <CtaSection />
+        <ContactSection />
+        <NewsletterSection />
       </main>
       <Footer />
     </div>
