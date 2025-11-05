@@ -5,6 +5,7 @@ import { Card } from "@/components/ui/card";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Button } from "@/components/ui/button";
 import { MapPin } from "lucide-react";
+import SectionHeader from './section-header';
 
 const events = {
   upcoming: [
@@ -74,16 +75,16 @@ const events = {
 type EventCategory = keyof typeof events;
 
 const EventCard = ({ event }: { event: typeof events.upcoming[0] }) => (
-  <Card className="bg-white border-l-4 border-gold p-6 rounded-md shadow-sm mb-6 flex flex-col sm:flex-row items-start gap-6">
+  <Card className="bg-card border-l-4 border-primary p-6 rounded-md shadow-sm mb-6 flex flex-col sm:flex-row items-start gap-6">
     <div className="text-center sm:text-left">
-      <p className="font-accent font-bold text-base md:text-lg text-gold">{event.date} • {event.time}</p>
-      <h3 className="font-headline text-xl md:text-2xl font-bold text-dark-bg my-2">{event.title}</h3>
-      <div className="flex items-center text-sm text-gray-mid mb-3">
+      <p className="font-accent font-bold text-base md:text-lg text-primary">{event.date} • {event.time}</p>
+      <h3 className="font-headline text-xl md:text-2xl font-bold text-foreground my-2">{event.title}</h3>
+      <div className="flex items-center text-sm text-muted-foreground mb-3">
         <MapPin className="h-4 w-4 mr-1.5" />
         <span>{event.location}</span>
       </div>
-      <p className="text-base text-gray-800 leading-relaxed mb-4">{event.description}</p>
-      <Button size="sm" className="font-accent font-bold bg-gold text-dark-bg hover:bg-gold/90 px-5 py-2 rounded">
+      <p className="text-base text-muted-foreground leading-relaxed mb-4">{event.description}</p>
+      <Button size="sm" className="font-accent font-bold px-5 py-2 rounded">
         Inscrever-se
       </Button>
     </div>
@@ -104,20 +105,16 @@ export default function EventsSection() {
   };
 
   return (
-    <section className="w-full bg-cream-bg py-12 md:py-16 lg:py-20 relative overflow-hidden">
+    <section id="events-section" className="w-full bg-background py-12 md:py-16 lg:py-20 relative overflow-hidden">
         <div
-            className="absolute top-0 left-0 h-full w-full bg-repeat opacity-[0.02]"
+            className="absolute top-0 left-0 h-full w-full bg-repeat opacity-[0.03]"
             style={{
             backgroundImage:
-                'url("data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%231a1a1a\' fill-opacity=\'1\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")',
+                'url("data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23a0a0a0\' fill-opacity=\'1\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")',
             }}
         />
       <div className="container mx-auto max-w-5xl px-6 md:px-12 lg:px-16 z-10 relative">
-        <div className="text-center mb-12">
-          <h2 className="font-headline text-3xl md:text-4xl lg:text-5xl font-bold text-dark-bg">
-            Eventos & Calendário
-          </h2>
-        </div>
+        <SectionHeader title="Eventos & Calendário" />
 
         <Tabs value={Object.keys(tabMapping).find(key => tabMapping[key] === activeTab)} onValueChange={handleTabChange} className="mb-12 flex justify-center">
             <TabsList className="bg-transparent p-0">
@@ -125,7 +122,7 @@ export default function EventsSection() {
                 <TabsTrigger
                     key={tab}
                     value={tab}
-                    className="font-accent text-sm md:text-base font-bold text-gray-mid data-[state=active]:text-gold data-[state=active]:shadow-none data-[state=active]:border-b-2 data-[state=active]:border-gold rounded-none bg-transparent hover:text-gold/80 transition-colors mx-2 md:mx-6 px-2 py-1"
+                    className="font-accent text-sm md:text-base font-bold text-muted-foreground data-[state=active]:text-primary data-[state=active]:shadow-none data-[state=active]:border-b-2 data-[state=active]:border-primary rounded-none bg-transparent hover:text-primary/80 transition-colors mx-2 md:mx-6 px-2 py-1"
                 >
                     {tab}
                 </TabsTrigger>

@@ -47,7 +47,7 @@ export default function ContactForm() {
     }
 
   return (
-    <div className="bg-white p-8 md:p-10 rounded-lg shadow-lg w-full">
+    <div className="bg-card p-8 md:p-10 rounded-lg shadow-lg w-full">
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
           <FormField
@@ -55,7 +55,7 @@ export default function ContactForm() {
             name="name"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className="block text-sm font-semibold text-dark-bg mb-2">Nome Completo</FormLabel>
+                <FormLabel className="block text-sm font-semibold text-foreground mb-2">Nome Completo</FormLabel>
                 <FormControl>
                   <Input placeholder="Seu nome" {...field} />
                 </FormControl>
@@ -68,7 +68,7 @@ export default function ContactForm() {
             name="email"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className="block text-sm font-semibold text-dark-bg mb-2">Email</FormLabel>
+                <FormLabel className="block text-sm font-semibold text-foreground mb-2">Email</FormLabel>
                 <FormControl>
                   <Input placeholder="seu.email@exemplo.com" {...field} />
                 </FormControl>
@@ -81,7 +81,7 @@ export default function ContactForm() {
             name="subject"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className="block text-sm font-semibold text-dark-bg mb-2">Assunto</FormLabel>
+                <FormLabel className="block text-sm font-semibold text-foreground mb-2">Assunto</FormLabel>
                 <FormControl>
                   <Input placeholder="Ex: Dúvida sobre programas" {...field} />
                 </FormControl>
@@ -94,7 +94,7 @@ export default function ContactForm() {
             name="message"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className="block text-sm font-semibold text-dark-bg mb-2">Mensagem</FormLabel>
+                <FormLabel className="block text-sm font-semibold text-foreground mb-2">Mensagem</FormLabel>
                 <FormControl>
                   <Textarea placeholder="Sua mensagem" {...field} className="h-36 resize-none"/>
                 </FormControl>
@@ -102,7 +102,7 @@ export default function ContactForm() {
               </FormItem>
             )}
           />
-          <Button type="submit" className="w-full bg-gold text-dark-bg font-semibold px-6 py-3 rounded hover:bg-opacity-90 transition-all duration-200 h-auto text-base mt-2">
+          <Button type="submit" size="lg" className="w-full font-semibold mt-2">
             Enviar Mensagem
           </Button>
         </form>

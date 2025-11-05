@@ -46,16 +46,16 @@ const footerLinks = {
 
 export default function Footer() {
   return (
-    <footer className="bg-dark-bg text-cream-bg border-t border-gray-light/20">
+    <footer className="bg-secondary text-secondary-foreground border-t border-border">
       <div className="container mx-auto max-w-7xl px-6 md:px-12 lg:px-16 py-16">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
 
           <div>
-            <h3 className="font-headline text-base font-bold text-gold mb-4">Sobre NEABI</h3>
+            <h3 className="font-headline text-base font-bold text-primary mb-4">Sobre NEABI</h3>
             <ul className="space-y-3">
               {footerLinks.about.map((link) => (
                 <li key={link.title}>
-                  <Link href={link.href} className="text-sm text-cream-bg hover:text-gold transition-colors" style={{lineHeight: 1.8}}>
+                  <Link href={link.href} className="text-sm text-secondary-foreground hover:text-primary transition-colors" style={{lineHeight: 1.8}}>
                     {link.title}
                   </Link>
                 </li>
@@ -64,11 +64,11 @@ export default function Footer() {
           </div>
           
           <div>
-            <h3 className="font-headline text-base font-bold text-gold mb-4">Programas & Recursos</h3>
+            <h3 className="font-headline text-base font-bold text-primary mb-4">Programas & Recursos</h3>
             <ul className="space-y-3">
               {footerLinks.programs.map((link) => (
                 <li key={link.title}>
-                  <Link href={link.href} className="text-sm text-cream-bg hover:text-gold transition-colors" style={{lineHeight: 1.8}}>
+                  <Link href={link.href} className="text-sm text-secondary-foreground hover:text-primary transition-colors" style={{lineHeight: 1.8}}>
                     {link.title}
                   </Link>
                 </li>
@@ -77,11 +77,11 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="font-headline text-base font-bold text-gold mb-4">Institucional</h3>
+            <h3 className="font-headline text-base font-bold text-primary mb-4">Institucional</h3>
             <ul className="space-y-3">
               {footerLinks.institution.map((link) => (
                 <li key={link.title}>
-                  <Link href={link.href} className="text-sm text-cream-bg hover:text-gold transition-colors" style={{lineHeight: 1.8}}>
+                  <Link href={link.href} className="text-sm text-secondary-foreground hover:text-primary transition-colors" style={{lineHeight: 1.8}}>
                     {link.title}
                   </Link>
                 </li>
@@ -90,42 +90,42 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="font-headline text-base font-bold text-gold mb-4">Contato & Redes</h3>
+            <h3 className="font-headline text-base font-bold text-primary mb-4">Contato & Redes</h3>
             <ul className="space-y-4 text-sm">
                 <li className="flex items-start gap-3">
-                    <Mail className="h-4 w-4 text-gold mt-1" />
-                    <span className="text-cream-bg">contato@neabi.edu.br</span>
+                    <Mail className="h-4 w-4 text-primary mt-1" />
+                    <span className="text-secondary-foreground">contato@neabi.edu.br</span>
                 </li>
                 <li className="flex items-start gap-3">
-                    <Phone className="h-4 w-4 text-gold mt-1" />
-                    <span className="text-cream-bg">(35) 3291-0000</span>
+                    <Phone className="h-4 w-4 text-primary mt-1" />
+                    <span className="text-secondary-foreground">(35) 3291-0000</span>
                 </li>
                 <li className="flex items-start gap-3">
-                    <MapPin className="h-4 w-4 text-gold mt-1 flex-shrink-0" />
-                    <span className="text-cream-bg leading-relaxed" style={{lineHeight: 1.6}}>IFSULDEMINAS<br/>R. Ituiutaba, 85<br/>Machado, MG 37750-000</span>
+                    <MapPin className="h-4 w-4 text-primary mt-1 flex-shrink-0" />
+                    <span className="text-secondary-foreground leading-relaxed" style={{lineHeight: 1.6}}>IFSULDEMINAS<br/>R. Ituiutaba, 85<br/>Machado, MG 37750-000</span>
                 </li>
             </ul>
             <div className="flex space-x-4 mt-6">
-                <Link href="#" className="text-gold hover:text-warm-orange transition-colors"><span className="sr-only">Instagram</span><Instagram className="h-6 w-6" /></Link>
-                <Link href="#" className="text-gold hover:text-warm-orange transition-colors"><span className="sr-only">Facebook</span><FacebookIcon className="h-6 w-6" /></Link>
-                <Link href="#" className="text-gold hover:text-warm-orange transition-colors"><span className="sr-only">WhatsApp</span><WhatsAppIcon className="h-6 w-6" /></Link>
-                <Link href="#" className="text-gold hover:text-warm-orange transition-colors"><span className="sr-only">Twitter</span><TwitterIcon className="h-6 w-6" /></Link>
+                <Link href="#" className="text-primary hover:text-primary/80 transition-colors"><span className="sr-only">Instagram</span><Instagram className="h-6 w-6" /></Link>
+                <Link href="#" className="text-primary hover:text-primary/80 transition-colors"><span className="sr-only">Facebook</span><FacebookIcon className="h-6 w-6" /></Link>
+                <Link href="#" className="text-primary hover:text-primary/80 transition-colors"><span className="sr-only">WhatsApp</span><WhatsAppIcon className="h-6 w-6" /></Link>
+                <Link href="#" className="text-primary hover:text-primary/80 transition-colors"><span className="sr-only">Twitter</span><TwitterIcon className="h-6 w-6" /></Link>
             </div>
           </div>
         </div>
 
-        <div className="mt-16 mb-6 h-[1px] bg-forest"></div>
+        <div className="mt-16 mb-6 h-[1px] bg-border"></div>
 
         <div className="flex flex-col sm:flex-row items-center justify-between">
-            <p className="text-xs text-gray-mid text-center sm:text-left">
+            <p className="text-xs text-muted-foreground text-center sm:text-left">
                 &copy; {new Date().getFullYear()} NEABI - Todos os direitos reservados
             </p>
-            <div className="text-xs text-gray-mid mt-4 sm:mt-0">
-                <Link href="#" className="hover:underline text-gold">Política de Privacidade</Link>
+            <div className="text-xs text-muted-foreground mt-4 sm:mt-0">
+                <Link href="#" className="hover:underline text-primary">Política de Privacidade</Link>
                 <span className="mx-2">|</span>
-                <Link href="#" className="hover:underline text-gold">Termos de Uso</Link>
+                <Link href="#" className="hover:underline text-primary">Termos de Uso</Link>
                 <span className="mx-2">|</span>
-                <Link href="#" className="hover:underline text-gold">Acessibilidade</Link>
+                <Link href="#" className="hover:underline text-primary">Acessibilidade</Link>
             </div>
         </div>
       </div>

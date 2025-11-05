@@ -12,6 +12,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { PlaceHolderImages } from "@/lib/placeholder-images"
 import { Quote } from "lucide-react";
+import SectionHeader from "./section-header"
 
 const testimonials = [
   {
@@ -36,18 +37,19 @@ const testimonials = [
 
 export default function TestimonialsSection() {
   return (
-    <section className="w-full py-12 md:py-16 lg:py-20 bg-dark-bg text-cream-bg">
+    <section className="w-full py-12 md:py-16 lg:py-20 bg-muted/30">
       <div className="container mx-auto max-w-5xl px-6 md:px-12 lg:px-16">
-        <div className="text-center mb-12">
-          <h2 className="font-headline text-3xl md:text-4xl lg:text-5xl font-bold text-gold">Vozes da Nossa Comunidade</h2>
-          <p className="mt-4 max-w-2xl mx-auto text-base md:text-lg text-cream-bg/90 leading-relaxed">Ouça diretamente daqueles que fizeram parte da nossa jornada.</p>
-        </div>
+        <SectionHeader 
+            title="Vozes da Nossa Comunidade"
+            subtitle="Ouça diretamente daqueles que fizeram parte da nossa jornada."
+            titleClassName="text-primary"
+        />
         <Carousel
           opts={{
             align: "start",
             loop: true,
           }}
-          className="w-full"
+          className="w-full mt-12"
         >
           <CarouselContent>
             {testimonials.map((testimonial) => {
@@ -55,23 +57,23 @@ export default function TestimonialsSection() {
               return (
                 <CarouselItem key={testimonial.name}>
                   <div className="p-4">
-                    <Card className="bg-white/5 border-2 border-gold/20 rounded-lg">
+                    <Card className="bg-card border-2 border-primary/20 rounded-lg">
                       <CardContent className="p-8 text-center flex flex-col items-center">
-                         <Quote className="text-gold/30 text-4xl mb-6" />
-                        <blockquote className="max-w-2xl text-lg md:text-xl font-medium text-cream-bg italic leading-relaxed">
+                         <Quote className="text-primary/30 h-10 w-10 mb-6" />
+                        <blockquote className="max-w-2xl text-lg md:text-xl font-medium text-foreground italic leading-relaxed">
                           <p>&ldquo;{testimonial.quote}&rdquo;</p>
                         </blockquote>
-                        <div className="w-20 h-px bg-gold/50 my-6"></div>
+                        <div className="w-20 h-px bg-primary/50 my-6"></div>
                         <footer className="flex items-center gap-4">
                           {image && (
-                            <Avatar className="w-16 h-16 border-2 border-gold">
+                            <Avatar className="w-16 h-16 border-2 border-primary">
                               <AvatarImage src={image.imageUrl} alt={image.description} data-ai-hint={image.imageHint} />
                               <AvatarFallback>{testimonial.name.charAt(0)}</AvatarFallback>
                             </Avatar>
                           )}
                           <div>
-                            <div className="font-accent font-bold text-lg text-gold text-left">{testimonial.name}</div>
-                            <div className="text-gray-mid text-sm text-left">{testimonial.role}</div>
+                            <div className="font-accent font-bold text-lg text-primary text-left">{testimonial.name}</div>
+                            <div className="text-muted-foreground text-sm text-left">{testimonial.role}</div>
                           </div>
                         </footer>
                       </CardContent>
@@ -81,8 +83,8 @@ export default function TestimonialsSection() {
               )
             })}
           </CarouselContent>
-          <CarouselPrevious className="-left-4 text-gold hover:bg-gold hover:text-dark-bg" />
-          <CarouselNext className="-right-4 text-gold hover:bg-gold hover:text-dark-bg"/>
+          <CarouselPrevious className="-left-4 text-primary hover:bg-primary hover:text-primary-foreground" />
+          <CarouselNext className="-right-4 text-primary hover:bg-primary hover:text-primary-foreground"/>
         </Carousel>
       </div>
     </section>

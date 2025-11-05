@@ -1,5 +1,6 @@
 import { Instagram, Mail, MapPin, Phone } from 'lucide-react';
 import ContactForm from './contact-form';
+import SectionHeader from './section-header';
 
 const FacebookIcon = (props: React.SVGProps<SVGSVGElement>) => (
     <svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
@@ -21,17 +22,17 @@ const WhatsAppIcon = (props: React.SVGProps<SVGSVGElement>) => (
   
 const infoCards = [
     {
-      icon: <Mail className="h-6 w-6 text-gold" />,
+      icon: <Mail className="h-6 w-6 text-primary" />,
       title: 'Email',
       text: 'contato@neabi.edu.br',
     },
     {
-      icon: <Phone className="h-6 w-6 text-gold" />,
+      icon: <Phone className="h-6 w-6 text-primary" />,
       title: 'Telefone',
       text: '(35) 3291-0000',
     },
     {
-      icon: <MapPin className="h-6 w-6 text-gold" />,
+      icon: <MapPin className="h-6 w-6 text-primary" />,
       title: 'Endereço',
       text: 'IFSULDEMINAS Campus Machado\nR. Ituiutaba, 85 - Machado, MG',
     },
@@ -39,32 +40,32 @@ const infoCards = [
 
 export default function ContactSection() {
     return (
-        <section className="w-full bg-gradient-to-r from-gold to-warm-orange py-12 md:py-16 lg:py-20">
+        <section className="w-full bg-gradient-to-r from-primary to-primary/80 py-12 md:py-16 lg:py-20">
             <div className="container mx-auto max-w-7xl px-6 md:px-12 lg:px-16">
-                <div className="text-center mb-12">
-                    <h2 className="font-headline text-3xl md:text-4xl lg:text-5xl font-bold text-cream-bg">
-                        Quer Fazer Parte da Transformação?
-                    </h2>
-                </div>
+                <SectionHeader 
+                    title="Quer Fazer Parte da Transformação?"
+                    titleClassName="text-primary-foreground"
+                    className="mb-12"
+                />
                 <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-start">
-                    <div className="text-dark-bg">
+                    <div className="text-primary-foreground">
                         <h3 className="font-accent text-2xl md:text-3xl font-bold mb-6">Fale Conosco</h3>
                         <div className="space-y-6">
                             {infoCards.map(card => (
                                 <div key={card.title} className="flex items-start gap-4">
                                     {card.icon}
                                     <div>
-                                        <h4 className="font-accent font-bold text-lg text-dark-bg">{card.title}</h4>
-                                        <p className="text-base text-dark-bg whitespace-pre-line leading-relaxed">{card.text}</p>
+                                        <h4 className="font-accent font-bold text-lg text-primary-foreground">{card.title}</h4>
+                                        <p className="text-base text-primary-foreground/90 whitespace-pre-line leading-relaxed">{card.text}</p>
                                     </div>
                                 </div>
                             ))}
                         </div>
                         <div className="flex space-x-4 mt-8">
-                            <a href="#" aria-label="Instagram"><Instagram className="h-8 w-8 text-dark-bg hover:text-cream-bg transition-colors" /></a>
-                            <a href="#" aria-label="Facebook"><FacebookIcon className="h-8 w-8 text-dark-bg hover:text-cream-bg transition-colors" /></a>
-                            <a href="#" aria-label="WhatsApp"><WhatsAppIcon className="h-8 w-8 text-dark-bg hover:text-cream-bg transition-colors" /></a>
-                            <a href="#" aria-label="Twitter"><TwitterIcon className="h-8 w-8 text-dark-bg hover:text-cream-bg transition-colors" /></a>
+                            <a href="#" aria-label="Instagram"><Instagram className="h-8 w-8 text-primary-foreground hover:text-white transition-colors" /></a>
+                            <a href="#" aria-label="Facebook"><FacebookIcon className="h-8 w-8 text-primary-foreground hover:text-white transition-colors" /></a>
+                            <a href="#" aria-label="WhatsApp"><WhatsAppIcon className="h-8 w-8 text-primary-foreground hover:text-white transition-colors" /></a>
+                            <a href="#" aria-label="Twitter"><TwitterIcon className="h-8 w-8 text-primary-foreground hover:text-white transition-colors" /></a>
                         </div>
                     </div>
                     <ContactForm />

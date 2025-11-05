@@ -55,16 +55,6 @@ export default {
           DEFAULT: 'hsl(var(--card))',
           foreground: 'hsl(var(--card-foreground))',
         },
-        // Custom colors from prompt
-        gold: '#D4AF37',
-        'dark-bg': '#1a1a1a',
-        'cream-bg': '#f8f7f4',
-        terra: '#8B4513',
-        forest: '#2d5016',
-        ocean: '#1f3a70',
-        'warm-orange': '#E67E22',
-        'gray-light': '#e8e8e8',
-        'gray-mid': '#a0a0a0',
       },
       borderRadius: {
         lg: 'var(--radius)',
