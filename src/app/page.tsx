@@ -3,6 +3,7 @@ import HeroSection from '@/components/app/hero-section';
 import WelcomeSection from '@/components/app/welcome-section';
 import PillarsSection from '@/components/app/pillars-section';
 import StatsSection from '@/components/app/stats-section';
+import WhatNeabiDoes from '@/components/app/what-neabi-does';
 import ProgramsCarousel from '@/components/app/programs-carousel';
 import TestimonialsSection from '@/components/app/testimonials-section';
 import CtaSection from '@/components/app/cta-section';
@@ -17,6 +18,7 @@ export default function Home() {
         <WelcomeSection />
         <PillarsSection />
         <StatsSection />
+        <WhatNeabiDoes />
         <ProgramsCarousel />
         <TestimonialsSection />
         <CtaSection />
