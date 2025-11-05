@@ -7,7 +7,7 @@ export default function HeroSection() {
   const heroImage = PlaceHolderImages.find((img) => img.id === "hero-bg");
 
   return (
-    <section className="relative h-[80vh] min-h-[600px] w-full flex items-center justify-center text-center text-white">
+    <section className="relative h-[80vh] md:h-screen min-h-[600px] w-full flex items-center justify-center text-center">
       {heroImage && (
         <Image
           src={heroImage.imageUrl}
@@ -20,17 +20,17 @@ export default function HeroSection() {
       )}
       <div className="absolute inset-0 bg-black/60" />
       <div className="relative z-10 max-w-4xl px-4">
-        <h1 className="font-headline text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl">
-          Transformação Educacional Através da Equidade e Resistência
+        <h1 className="font-headline text-[40px] md:text-[64px] font-bold leading-tight tracking-tight text-[#f8f7f4]">
+          Educação Antirracista, Valorização e Transformação Social
         </h1>
-        <p className="mt-6 text-lg leading-8 text-gray-200 md:text-xl font-body">
-          O NEABI é dedicado a celebrar as culturas africana e indígena, promovendo a educação antirracista e construindo uma sociedade mais justa e inclusiva.
+        <p className="mt-6 text-base md:text-xl leading-8 text-[#D4AF37] font-body">
+          Conheça o Núcleo de Estudos Afro-Brasileiros e Indígenas
         </p>
-        <div className="mt-10 flex items-center justify-center gap-x-6">
-          <Button asChild size="lg" className="font-accent font-bold bg-primary text-primary-foreground hover:bg-primary/90">
-            <Link href="#">Descubra Nossos Programas</Link>
+        <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <Button asChild size="lg" className="font-accent font-bold bg-[#D4AF37] text-[#1a1a1a] hover:bg-[#D4AF37]/90 px-8 py-3.5">
+            <Link href="#">Conheça Nossos Programas</Link>
           </Button>
-          <Button asChild variant="outline" size="lg" className="font-accent font-bold border-white text-white hover:bg-white/10">
+          <Button asChild variant="outline" size="lg" className="font-accent font-bold border-[#D4AF37] text-[#D4AF37] hover:bg-[#D4AF37]/10 hover:text-[#D4AF37] px-8 py-3.5">
             <Link href="#">Saiba Mais</Link>
           </Button>
         </div>

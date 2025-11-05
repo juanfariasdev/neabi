@@ -20,7 +20,7 @@ body {
     --secondary-foreground: 0 0% 10%;
     --muted: 0 0% 91%;
     --muted-foreground: 0 0% 63%;
-    --accent: 99 56% 20%;
+    --accent: 45 74% 52%;
     --accent-foreground: 40 25% 97%;
     --destructive: 25 71% 31%;
     --destructive-foreground: 40 25% 97%;
@@ -32,7 +32,7 @@ body {
     --chart-3: 197 37% 24%;
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
-    --radius: 0.5rem;
+    --radius: 0.25rem;
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
     --sidebar-primary: 240 5.9% 10%;
@@ -55,7 +55,7 @@ body {
     --secondary-foreground: 40 25% 97%;
     --muted: 0 0% 15%;
     --muted-foreground: 0 0% 63%;
-    --accent: 99 56% 30%;
+    --accent: 45 74% 52%;
     --accent-foreground: 40 25% 97%;
     --destructive: 25 71% 41%;
     --destructive-foreground: 40 25% 97%;
