@@ -41,7 +41,7 @@ const events = [
 
 export default function HistoryTimelineSection() {
     return (
-        <section className="w-full py-20 md:py-28 lg:py-32 px-4 md:px-6 lg:px-8 bg-warm-white">
+        <section id="history-timeline-section" className="w-full py-20 md:py-28 lg:py-32 px-4 md:px-6 lg:px-8 bg-warm-white">
             <div className="max-w-5xl mx-auto">
                 <div className="text-center mb-16 md:mb-20">
                     <h2 className="font-display font-bold text-4xl md:text-5xl lg:text-6xl text-deep-black mb-4 leading-tight">
@@ -78,11 +78,12 @@ export default function HistoryTimelineSection() {
                                         </Link>
                                     </div>
                                 </div>
-                                <div className="md:w-1/2 flex justify-center">
+                                <div className="flex justify-center">
                                     <div className={`w-16 h-16 bg-${event.color} rounded-full border-4 border-warm-white shadow-md flex items-center justify-center relative z-10`}>
                                         <CheckCircle className="text-white h-6 w-6" />
                                     </div>
                                 </div>
+                                <div className="md:w-1/2"></div>
                             </div>
                         ))}
                     </div>

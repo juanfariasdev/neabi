@@ -40,7 +40,7 @@ const infoCards = [
 
 export default function ContactSection() {
     return (
-        <section className="w-full bg-gradient-to-r from-primary to-primary/80 py-12 md:py-16 lg:py-20">
+        <section id="contact-section" className="w-full bg-gradient-to-r from-primary to-primary/80 py-12 md:py-16 lg:py-20">
             <div className="container mx-auto max-w-7xl px-6 md:px-12 lg:px-16">
                 <SectionHeader 
                     title="Quer Fazer Parte da Transformação?"

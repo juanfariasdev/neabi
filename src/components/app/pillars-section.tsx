@@ -33,7 +33,7 @@ const pillars = [
 
 export default function PillarsSection() {
   return (
-    <section className="w-full py-20 md:py-28 lg:py-32 px-4 md:px-6 lg:px-8 bg-deep-black">
+    <section id="pillars-section" className="w-full py-20 md:py-28 lg:py-32 px-4 md:px-6 lg:px-8 bg-deep-black">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16 md:mb-20">
           <h2 className="font-display font-bold text-4xl md:text-5xl lg:text-6xl text-gold mb-6 leading-tight">

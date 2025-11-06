@@ -61,7 +61,7 @@ export default function StatsSection() {
   }, []);
 
   return (
-    <section ref={ref} className="w-full bg-background py-12 md:py-16 lg:py-20">
+    <section id="stats-section" ref={ref} className="w-full bg-background py-12 md:py-16 lg:py-20">
       <div className="container mx-auto max-w-7xl px-6 md:px-12 lg:px-16">
         <SectionHeader title="Nosso Impacto em Números" subtitle="Construindo um legado de mudança e representatividade." />
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mt-12">

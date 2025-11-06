@@ -2,14 +2,16 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
 
+import BannerImg from '@/assets/banner.png';
+
 export default function HeroSection() {
   return (
-    <section className="relative w-full h-screen md:h-[80vh] flex items-center justify-center text-center overflow-hidden">
+    <section className="relative w-full h-screen md:h-[90vh] flex items-center justify-center text-center overflow-hidden">
       {/* Background Image with Gradient Overlay */}
       <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat bg-fixed"
+        className="absolute inset-0 bg-cover bg-no-repeat bg-fixed bg-right-bottom"
         style={{
-          backgroundImage: "linear-gradient(rgba(26, 26, 26, 0.65), rgba(26, 26, 26, 0.65)), url('https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=1200&h=1200&fit=crop')"
+          backgroundImage: `linear-gradient(rgba(26, 26, 26, 0.65), rgba(26, 26, 26, 0.65)), url(${BannerImg.src})`
         }}
       />
 

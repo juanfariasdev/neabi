@@ -2,19 +2,21 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Menu, Search, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { cn } from '@/lib/utils';
-import { Input } from '@/components/ui/input';
+
+import LogoImg from '@/assets/logo.png';
+import Image from 'next/image';
 
 const navLinks = [
   { name: 'Início', href: '#hero-section' },
   { name: 'Sobre', href: '#welcome-section' },
-  { name: 'Programas', href: '#programs-carousel' },
-  { name: 'Recursos', href: '#educational-resources' },
-  { name: 'Eventos', href: '#events-section' },
-  { name: 'Blog', href: '#blog-section' },
+  { name: 'Pilares', href: '#pillars-section' },
+  { name: 'Impacto', href: '#stats-section' },
+  { name: 'Histórico', href: '#history-timeline-section' },
+  { name: 'Contato', href: '#contact-section' },
 ];
 
 export default function Header() {
@@ -37,11 +39,12 @@ export default function Header() {
       )}
     >
       <div className="container mx-auto max-w-7xl px-6 md:px-12 lg:px-16">
-        <div className="flex h-20 items-center justify-between">
-          <Link href="#" className="text-3xl font-bold font-headline text-primary">
+        <div className="flex h-16 items-center justify-between">
+          <Link href="/" className="text-3xl font-bold font-headline text-foreground flex items-center gap-2 h-10">
+            <Image src={LogoImg.src} alt="NEABI Logo" width={55} height={49} className='w-auto h-full' />
             NEABI
           </Link>
-          
+
           <nav className="hidden lg:flex items-center space-x-8">
             {navLinks.map((link) => (
               <Link
@@ -55,11 +58,6 @@ export default function Header() {
           </nav>
 
           <div className="flex items-center gap-2">
-            <Button variant="ghost" size="icon" className="hidden lg:inline-flex text-foreground hover:bg-primary/10 hover:text-primary">
-              <Search className="h-5 w-5" />
-              <span className="sr-only">Pesquisar</span>
-            </Button>
-            
             <div className="lg:hidden">
               <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
                 <SheetTrigger asChild>
@@ -69,16 +67,17 @@ export default function Header() {
                   </Button>
                 </SheetTrigger>
                 <SheetContent side="right" className="w-[300px] bg-background p-0">
-                   <div className="flex h-full flex-col">
-                     <div className="flex items-center justify-between p-6 border-b">
-                        <Link href="#" className="text-2xl font-bold font-headline text-primary" onClick={() => setIsMobileMenuOpen(false)}>
-                          NEABI
-                        </Link>
-                        <Button variant="ghost" size="icon" onClick={() => setIsMobileMenuOpen(false)}>
-                            <X className="h-6 w-6" />
-                            <span className="sr-only">Fechar menu</span>
-                        </Button>
-                     </div>
+                  <div className="flex h-full flex-col">
+                    <div className="flex items-center justify-between p-6 border-b">
+                      <Link href="/" className="text-2xl font-bold font-headline text-foreground flex items-center gap-2 h-10">
+                        <Image src={LogoImg.src} alt="NEABI Logo" width={55} height={49} className='w-auto h-full' />
+                        NEABI
+                      </Link>
+                      <Button variant="ghost" size="icon" onClick={() => setIsMobileMenuOpen(false)}>
+                        <X className="h-6 w-6" />
+                        <span className="sr-only">Fechar menu</span>
+                      </Button>
+                    </div>
                     <nav className="flex flex-col space-y-4 p-6">
                       {navLinks.map((link) => (
                         <Link
@@ -91,12 +90,7 @@ export default function Header() {
                         </Link>
                       ))}
                     </nav>
-                     <div className="mt-auto p-6 border-t">
-                        <div className="relative w-full">
-                            <Input placeholder="Pesquisar..." className="pl-10 h-11 bg-card" />
-                            <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
-                        </div>
-                    </div>
+
                   </div>
                 </SheetContent>
               </Sheet>
