@@ -6,7 +6,7 @@ import BannerImg from '@/assets/banner.png';
 
 export default function HeroSection() {
   return (
-    <section className="relative w-full h-screen md:h-[90vh] flex items-center justify-center text-center overflow-hidden">
+    <section id="hero-section" className="relative w-full h-screen md:h-[90vh] flex items-center justify-center text-center overflow-hidden">
       {/* Background Image with Gradient Overlay */}
       <div
         className="absolute inset-0 bg-cover bg-no-repeat bg-fixed bg-right-bottom"
