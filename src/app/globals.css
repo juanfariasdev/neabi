@@ -4,18 +4,18 @@
 
 @layer base {
   :root {
-    --background: 35 100% 98%; /* PapayaWhip */
-    --foreground: 20 14% 4%; /* Near Black */
+    --background: 35 100% 98%; /* warm-white #f8f7f4 */
+    --foreground: 20 14% 4%; /* deep-black #1a1a1a */
     --card: 35 100% 98%;
     --card-foreground: 20 14% 4%;
     --popover: 35 100% 98%;
     --popover-foreground: 20 14% 4%;
-    --primary: 38 60% 50%; /* #D4AF37 - African Gold */
+    --primary: 38 60% 50%; /* gold #D4AF37 */
     --primary-foreground: 20 14% 4%;
-    --secondary: 40 10% 15%; /* Darker gray */
+    --secondary: 40 10% 15%;
     --secondary-foreground: 35 100% 98%;
-    --muted: 35 20% 94%; /* Lighter gray */
-    --muted-foreground: 20 5% 45%; /* Medium gray */
+    --muted: 35 20% 94%;
+    --muted-foreground: 20 5% 45%;
     --accent: 38 60% 50%;
     --accent-foreground: 20 14% 4%;
     --destructive: 0 84% 60%;
@@ -52,8 +52,65 @@
 @layer base {
   * {
     @apply border-border;
+    border-color: var(--color-gray-light, #e8e8e8);
   }
+  
   body {
-    @apply bg-background text-foreground;
+    @apply bg-warm-white text-deep-black antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+  }
+
+  .font-heading {
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  *:focus-visible {
+    outline: 2px solid #D4AF37;
+    outline-offset: 2px;
+  }
+
+  a, button, input, select, textarea {
+    transition: all 200ms ease-out;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  /* Scrollbar Styles */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #f8f7f4;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #D4AF37;
+    border-radius: 5px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #c9a025;
+  }
+}
+
+@layer utilities {
+  .pattern-subtle {
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%231a1a1a' fill-opacity='0.02'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    background-repeat: repeat;
   }
 }

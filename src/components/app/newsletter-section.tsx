@@ -1,32 +1,29 @@
 'use client';
 
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
-
 export default function NewsletterSection() {
   return (
-    <section className="w-full bg-secondary py-10 md:py-12 border-t-2 border-primary">
-      <div className="container mx-auto max-w-4xl px-6 md:px-12 lg:px-16">
-        <div className="text-center mb-6">
-          <h3 className="font-accent font-bold text-lg md:text-2xl text-primary">
-            Fique por Dentro das Nossas Novidades
-          </h3>
-          <p className="font-body text-base text-secondary-foreground mt-3">
-            Assine nossa newsletter e receba atualizações sobre eventos, pesquisas e novas publicações.
-          </p>
-        </div>
-        <form className="flex flex-col sm:flex-row items-center gap-3 max-w-2xl mx-auto">
-          <Input 
-            type="email" 
-            placeholder="Seu email" 
-            className="flex-grow h-11 bg-transparent border-primary text-secondary-foreground placeholder:text-muted-foreground"
+    <section className="w-full py-16 md:py-20 px-4 md:px-6 lg:px-8 bg-deep-black border-t-4 border-gold">
+      <div className="max-w-4xl mx-auto text-center">
+        <h3 className="font-heading font-bold text-2xl md:text-3xl text-gold mb-4">
+          Fique por Dentro de Nossas Ações
+        </h3>
+        <p className="font-sans text-lg text-warm-white mb-8 max-w-2xl mx-auto leading-relaxed">
+          Inscreva-se em nossa newsletter para receber notícias, eventos e recursos de educação antirracista direto em seu e-mail.
+        </p>
+        <form className="flex flex-col sm:flex-row gap-3 max-w-lg mx-auto" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+          <input
+            className="flex-grow bg-transparent border-2 border-gold text-warm-white rounded-md px-4 py-3 focus:ring-2 focus:ring-gold focus:ring-opacity-30 placeholder-gray-mid transition-all duration-smooth"
+            placeholder="Seu melhor e-mail"
+            name="email"
+            type="email"
+            required
           />
-          <Button 
-            type="submit" 
-            className="font-accent font-semibold h-11 px-6 w-full sm:w-auto rounded"
+          <button
+            className="bg-gold text-deep-black font-heading font-bold py-3 px-8 rounded-md transition-all duration-smooth hover:bg-opacity-90 active:scale-95 shadow-md hover:shadow-lg whitespace-nowrap"
+            type="submit"
           >
             Se Inscrever
-          </Button>
+          </button>
         </form>
       </div>
     </section>

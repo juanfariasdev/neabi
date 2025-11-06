@@ -18,7 +18,7 @@ const Counter = ({ to, suffix }: { to: number, suffix: string }) => {
     const start = 0;
     const duration = 2000;
     let startTimestamp: number | null = null;
-    
+
     const step = (timestamp: number) => {
       if (!startTimestamp) startTimestamp = timestamp;
       const progress = Math.min((timestamp - startTimestamp) / duration, 1);
@@ -63,13 +63,13 @@ export default function StatsSection() {
   return (
     <section ref={ref} className="w-full bg-background py-12 md:py-16 lg:py-20">
       <div className="container mx-auto max-w-7xl px-6 md:px-12 lg:px-16">
-        <SectionHeader title="Nosso Impacto em Números" subtitle="Construindo um legado de mudança e representatividade."/>
+        <SectionHeader title="Nosso Impacto em Números" subtitle="Construindo um legado de mudança e representatividade." />
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mt-12">
           {stats.map((stat) => (
-            <div key={stat.label} className="flex flex-col items-center text-center bg-card rounded-lg p-8 shadow-sm border-t-4 border-primary">
+            <div key={stat.label} className="flex flex-col items-center text-center bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-all duration-smooth border-t-4 border-gold">
               {isInView && <Counter to={stat.value} suffix={stat.suffix} />}
-              <p className="mt-2 text-base md:text-lg font-medium text-foreground">{stat.label}</p>
-              <p className="text-sm text-muted-foreground mt-2 leading-relaxed">{stat.description}</p>
+              <p className="font-sans font-semibold text-base md:text-lg text-deep-black">{stat.label}</p>
+              <p className="font-sans text-sm text-gray-mid mt-2">{stat.description}</p>
             </div>
           ))}
         </div>

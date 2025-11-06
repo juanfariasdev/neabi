@@ -32,22 +32,20 @@ export function InfoCard({
   );
 
   return (
-    <Card className={cn("rounded-lg shadow-md transition-all duration-300 ease-in-out hover:shadow-lg hover:-translate-y-1", className)}>
-      <CardContent className="p-8">
-        <div className={containerClasses}>
+    <Card className={cn("p-8 rounded-lg border-0 border-l-4 border-gold flex flex-col transition-all duration-smooth hover:shadow-lg hover:-translate-y-2 shadow-md", className)}>
           <div className={iconContainerClasses}>
             {icon}
           </div>
           <div>
-            <h3 className={cn("font-headline text-xl font-semibold mb-3 text-foreground leading-snug", titleClassName)}>
+            <h3 className={cn("font-headline text-foreground font-display font-bold text-2xl md:text-3xl mb-4 leading-tight", titleClassName)}>
               {title}
             </h3>
-            <p className={cn("text-base text-muted-foreground leading-relaxed", descriptionClassName)}>
+            <p className={cn("font-sans text-base leading-relaxed flex-grow opacity-95", descriptionClassName)}>
               {description}
             </p>
           </div>
-        </div>
-      </CardContent>
+
+    
     </Card>
   );
 }

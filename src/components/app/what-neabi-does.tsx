@@ -1,35 +1,35 @@
-import { Heart, TrendingUp, Scale, Brain, Link2, Megaphone } from "lucide-react";
+import { Heart, TrendingUp, Scale, Brain, Link2, Megaphone, ThumbsUp, Lightbulb, Handshake } from "lucide-react";
 import SectionHeader from "./section-header";
 import { InfoCard } from "./info-card";
 
 const objectives = [
   {
-    icon: <Heart className="h-8 w-8 text-primary" />,
+    icon: <ThumbsUp className="h-12 w-12 text-gold mb-6" />,
     title: "Valorização",
     description: "Promover ações de valorização das identidades negra e indígenas, impulsionando a cultura da educação para a convivência e aceitação da diversidade.",
   },
   {
-    icon: <TrendingUp className="h-8 w-8 text-primary" />,
+    icon: <TrendingUp className="h-12 w-12 text-warm-orange mb-6" />,
     title: "Desenvolvimento",
     description: "Estimular ações educativas e divulgar a influência das culturas negra e indígena na formação do povo brasileiro, inserindo essas temáticas nos currículos escolares.",
   },
   {
-    icon: <Scale className="h-8 w-8 text-primary" />,
+    icon: <Scale className="h-12 w-12 text-forest-green mb-6" />,
     title: "Igualdade",
     description: "Fomentar estudos multi, inter e transdisciplinares sobre temas étnico-raciais e publicar resultados dessas pesquisas, contribuindo para redução de desigualdades.",
   },
   {
-    icon: <Brain className="h-8 w-8 text-primary" />,
+    icon: <Lightbulb className="h-12 w-12 text-deep-blue mb-6" />,
     title: "Reflexão",
     description: "Organizar encontros de reflexão e capacitação sobre a história, culturas africanas, afro-brasileiras e indígenas, aprofundando conhecimento e criticidade.",
   },
   {
-    icon: <Link2 className="h-8 w-8 text-primary" />,
+    icon: <Handshake className="h-12 w-12 text-saddle-brown mb-6" />,
     title: "Integração",
     description: "Criar ações de integração entre estudantes, escolas e comunidades negras, indígenas, quilombolas, urbanas e rurais, estabelecendo parcerias duráveis.",
   },
   {
-    icon: <Megaphone className="h-8 w-8 text-primary" />,
+    icon: <Megaphone className="h-12 w-12 text-gold mb-6" />,
     title: "Divulgação",
     description: "Incentivar estratégias para divulgar as ações do núcleo ao público interno e externo, ampliando visibilidade e engajamento comunitário nas redes sociais.",
   },
@@ -45,13 +45,13 @@ export default function WhatNeabiDoes() {
         />
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 md:gap-8 mt-12">
           {objectives.map((objective) => (
-            <InfoCard 
+            <InfoCard
               key={objective.title}
               icon={objective.icon}
               title={objective.title}
               description={objective.description}
+              titleClassName="text-2xl text-deep-black"
               variant="side-icon"
-              className="bg-card"
             />
           ))}
         </div>

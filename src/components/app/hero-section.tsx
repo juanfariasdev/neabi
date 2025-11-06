@@ -1,43 +1,49 @@
-import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { PlaceHolderImages } from "@/lib/placeholder-images";
-import { ArrowDown } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 
 export default function HeroSection() {
-  const heroImage = PlaceHolderImages.find((img) => img.id === "hero-bg");
-
   return (
-    <section id="hero-section" className="relative h-[80vh] md:h-screen min-h-[600px] w-full flex flex-col items-center justify-center text-center">
-      {heroImage && (
-        <Image
-          src={heroImage.imageUrl}
-          alt={heroImage.description}
-          fill
-          priority
-          className="object-cover"
-          data-ai-hint={heroImage.imageHint}
-        />
-      )}
-      <div className="absolute inset-0 bg-black/60" />
-      <div className="relative z-10 max-w-4xl px-4 flex flex-col items-center">
-        <h1 className="font-headline text-4xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tight text-white">
+    <section className="relative w-full h-screen md:h-[80vh] flex items-center justify-center text-center overflow-hidden">
+      {/* Background Image with Gradient Overlay */}
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat bg-fixed"
+        style={{
+          backgroundImage: "linear-gradient(rgba(26, 26, 26, 0.65), rgba(26, 26, 26, 0.65)), url('https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=1200&h=1200&fit=crop')"
+        }}
+      />
+
+      <div className="relative z-10 px-4 md:px-6 lg:px-8 max-w-4xl mx-auto">
+        <h1 className="font-display font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-warm-white mb-6 leading-tight tracking-tight">
           Educação Antirracista, Valorização e Transformação Social
         </h1>
-        <p className="mt-6 text-lg md:text-2xl leading-8 text-primary font-body max-w-3xl">
+        <p className="font-sans text-lg md:text-xl text-gold mb-12 leading-relaxed max-w-2xl mx-auto">
           Conheça o Núcleo de Estudos Afro-Brasileiros e Indígenas
         </p>
-        <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-          <Button asChild size="lg" className="font-accent font-semibold">
-            <Link href="#">Conheça Nossos Programas</Link>
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
+          <Button
+            asChild
+            className="w-full sm:w-auto bg-gold text-deep-black font-heading font-bold py-4 px-8 rounded-md transition-all duration-smooth hover:bg-opacity-90 active:scale-95 shadow-md hover:shadow-lg text-base md:text-lg"
+          >
+            <Link href="#programas">
+              Conheça Nossos Programas
+            </Link>
           </Button>
-          <Button asChild size="lg" variant="outline" className="font-accent font-semibold border-2 border-primary text-primary bg-transparent hover:bg-primary hover:text-primary-foreground">
-            <Link href="#">Saiba Mais</Link>
+          <Button
+            asChild
+            variant="outline"
+            className="w-full sm:w-auto border-2 border-gold text-gold bg-transparent font-heading font-bold py-4 px-8 rounded-md transition-all duration-smooth hover:bg-gold hover:text-deep-black shadow-md hover:shadow-lg text-base md:text-lg"
+          >
+            <Link href="#sobre">
+              Saiba Mais
+            </Link>
           </Button>
         </div>
       </div>
-      <div className="absolute bottom-8 z-10 animate-bounce">
-        <ArrowDown className="h-8 w-8 text-white" />
+
+      {/* Animated Arrow */}
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20">
+        <ChevronDown className="w-6 h-6 text-gold animate-bounce" strokeWidth={2} />
       </div>
     </section>
   );

@@ -17,11 +17,24 @@ export default {
     },
     extend: {
       fontFamily: {
-        body: ['Inter', 'sans-serif'],
-        headline: ['"Playfair Display"', 'serif'],
-        accent: ['Montserrat', 'sans-serif'],
+        display: ['"Playfair Display"', 'serif'],
+        sans: ['Inter', 'sans-serif'],
+        heading: ['Montserrat', 'sans-serif'],
       },
       colors: {
+        // HTML Theme Colors
+        gold: '#D4AF37',
+        'warm-white': '#f8f7f4',
+        'deep-black': '#1a1a1a',
+        'forest-green': '#2d5016',
+        'saddle-brown': '#8B4513',
+        'deep-blue': '#1f3a70',
+        'warm-orange': '#E67E22',
+        'gray-light': '#e8e8e8',
+        'gray-mid': '#a0a0a0',
+        'gray-dark': '#333333',
+        
+        // shadcn/ui colors
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',
@@ -57,9 +70,22 @@ export default {
         },
       },
       borderRadius: {
-        lg: 'var(--radius)',
-        md: 'calc(var(--radius) - 2px)',
-        sm: 'calc(var(--radius) - 4px)',
+        DEFAULT: '8px',
+        sm: '4px',
+        md: '8px',
+        lg: '12px',
+        xl: '16px',
+        full: '9999px',
+      },
+      boxShadow: {
+        soft: '0 2px 8px rgba(0, 0, 0, 0.08)',
+        md: '0 4px 12px rgba(0, 0, 0, 0.1)',
+        lg: '0 8px 24px rgba(0, 0, 0, 0.12)',
+        xl: '0 12px 32px rgba(0, 0, 0, 0.15)',
+      },
+      transitionDuration: {
+        smooth: '200ms',
+        'smooth-lg': '300ms',
       },
       keyframes: {
         'accordion-down': {
