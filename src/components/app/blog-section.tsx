@@ -9,30 +9,46 @@ import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Search } from 'lucide-react';
 import SectionHeader from './section-header';
 
-const blogPosts = [
+interface BlogPost {
+  id: string; // Identificador único do post (Slug é gerado a partir do título)
+  category: string; // Categoria do post
+  title: string; // Título do post
+  imgUrl: string; // URL da imagem do post
+  summary: string; // Resumo do post
+  content: string; // Conteúdo completo do post
+  date: string; // Vem sozinho do servidor
+}
+
+
+const blogPosts: BlogPost[] = [
   {
     id: 'blog-post-1',
     category: 'Análise',
+    imgUrl: '',
     date: '15 de Julho, 2024',
     title: 'A Importância da Representatividade na Mídia',
     summary: 'Uma análise aprofundada sobre como a representação de pessoas negras e indígenas na mídia impacta a sociedade.',
-    href: '#',
+    content: 'Uma análise aprofundada sobre como a representação de pessoas negras e indígenas na mídia impacta a sociedade.'
   },
   {
     id: 'blog-post-2',
     category: 'Educação',
+    imgUrl: '',
     date: '10 de Julho, 2024',
     title: 'Implementando a Lei 10.639/03 na Prática',
     summary: 'Dicas e recursos para educadores aplicarem o ensino da história e cultura afro-brasileira em sala de aula.',
-    href: '#',
+    content: 'Dicas e recursos para educadores aplicarem o ensino da história e cultura afro-brasileira em sala de aula.',
+
   },
   {
     id: 'blog-post-3',
     category: 'Cultura',
+    imgUrl: '',
     date: '05 de Julho, 2024',
     title: 'A Herança dos Quilombos no Brasil Contemporâneo',
     summary: 'Explore a rica herança cultural e política das comunidades quilombolas e sua relevância hoje.',
-    href: '#',
+    content: 'Explore a rica herança cultural e política das comunidades quilombolas e sua relevância hoje.',
+    
   },
 ];
 
@@ -74,7 +90,7 @@ export default function BlogSection() {
                   <p className="text-sm text-muted-foreground mb-2">{post.date} • <span className="text-primary font-semibold">{post.category}</span></p>
                   <h3 className="font-headline text-xl font-bold text-foreground mb-3 h-16">{post.title}</h3>
                   <p className="text-base text-muted-foreground leading-relaxed mb-4 flex-grow">{post.summary}</p>
-                  <Link href={post.href} className="font-accent font-bold text-sm text-primary hover:underline self-start mt-auto">
+                  <Link href={`/blog/` + post.id} className="font-accent font-bold text-sm text-primary hover:underline self-start mt-auto">
                     Leia Mais
                   </Link>
                 </CardContent>
