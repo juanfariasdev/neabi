@@ -1,54 +1,20 @@
 "use client";
 import { useEffect, useState } from 'react';
 import { InstagramEmbed, TikTokEmbed } from 'react-social-media-embed';
+import { Video } from '@/lib/prismic-utils';
 
-
-
-interface IVideo {
-    type: "tiktok" | "instagram";
-    url: string;
+interface VideoSectionProps {
+    videos: Video[];
 }
 
-const videos: IVideo[] = [
-    {
-        type: "tiktok",
-        url: "https://www.tiktok.com/@karensantosperfil/video/7403093541100064006",
-    },
-    {
-        type: "tiktok",
-        url: "https://www.tiktok.com/@_caviana/video/7402792245033766150",
-    },
-    {
-        type: "tiktok",
-        url: "https://www.tiktok.com/@questaodehistoria/video/7400929069849726214",
-    },
-    {
-        type: "tiktok",
-        url: "https://www.tiktok.com/@dougxmorais/video/7402725334812019974",
-    },
-    {
-        type: "tiktok",
-        url: "https://www.tiktok.com/@karensantosperfil/video/7406056755890818310",
-    },
-    {
-        type: "instagram",
-        url: "https://www.instagram.com/reel/DPkd193AByq/",
-    },
-    {
-        type: "instagram",
-        url: "https://www.instagram.com/reel/DPkkuY8jNhS/",
-    },
-];
-
-
-export default function VideoSection() {
+export default function VideoSection({ videos = [] }: VideoSectionProps) {
     const [isMounted, setIsMounted] = useState(false);
 
     useEffect(() => {
         setIsMounted(true);
     }, []);
 
-    function EmbedWrapper({ filtersVideo }: { filtersVideo: IVideo[] }) {
+    function EmbedWrapper({ filtersVideo }: { filtersVideo: Video[] }) {
         if (!isMounted) {
             return null;
         }
@@ -70,7 +36,7 @@ export default function VideoSection() {
         }
         acc[video.type].push(video);
         return acc;
-    }, {} as Record<string, IVideo[]>);
+    }, {} as Record<string, Video[]>);
 
     return (
         <section className="w-full py-20 md:py-28 lg:py-32 px-4 md:px-6 lg:px-8 bg-warm-white">
@@ -83,9 +49,13 @@ export default function VideoSection() {
                 </div>
                 <div className="relative flex flex-col gap-8">
                     {/* Timeline Line */}
-                    {Object.values(videosGroupedByType).map((videos: IVideo[], idx) => (
-                            <EmbedWrapper key={idx} filtersVideo={videos} />
-                    ))}
+                    {videos.length === 0 ? (
+                        <p className="text-center text-muted-foreground">Nenhum vídeo encontrado.</p>
+                    ) : (
+                        Object.values(videosGroupedByType).map((videos: Video[], idx) => (
+                                <EmbedWrapper key={idx} filtersVideo={videos} />
+                        ))
+                    )}
                 </div>
             </div>
         </section>

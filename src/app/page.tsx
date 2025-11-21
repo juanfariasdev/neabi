@@ -1,5 +1,3 @@
-'use client';
-
 import BlogSection from '@/components/app/blog-section';
 import ContactSection from '@/components/app/contact-section';
 import EducationalResources from '@/components/app/educational-resources-section';
@@ -18,13 +16,18 @@ import TestimonialsSection from '@/components/app/testimonials-section';
 import VideoSection from '@/components/app/videos-sction';
 import WelcomeSection from '@/components/app/welcome-section';
 import WhatNeabiDoes from '@/components/app/what-neabi-does';
+import { getBlogPosts, getTimelineEvents, getVideos } from '@/lib/prismic-utils';
 
-export default function Home() {
+export default async function Home() {
+  const posts = await getBlogPosts();
+  const events = await getTimelineEvents();
+  const videos = await getVideos();
+
   return (
     <div className="flex min-h-screen w-full flex-col bg-background text-foreground">
       <Header />
       <main className="flex-1">
-        {/* <VideoSection/> */}
+        {/* <VideoSection videos={videos}/> */}
 
         <HeroSection />
         <WelcomeSection />
@@ -32,16 +35,16 @@ export default function Home() {
         <PillarsSection />
         <StatsSection />
         <WhatNeabiDoes />
-        <HistoryTimelineSection />
+        <HistoryTimelineSection events={events} />
         <PoetrySection />
 
-        <VideoSection/>
+        <VideoSection videos={videos} />
 
         {/* <ProgramsCarousel />
         <TestimonialsSection />
-        <EducationalResources />
-        <BlogSection />
-        <EventsSection /> */}
+        <EducationalResources /> */}
+        {/* <BlogSection posts={posts} /> */}
+        {/* <EventsSection /> */}
 
         <ContactSection />
         <NewsletterSection />
