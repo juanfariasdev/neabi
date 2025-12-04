@@ -98,11 +98,11 @@ export default function Footer() {
                 </li>
                 <li className="flex items-start gap-3">
                     <Phone className="h-4 w-4 text-primary mt-1" />
-                    <span className="text-secondary-foreground">(35) 3291-0000</span>
+                    <span className="text-secondary-foreground">(35) 3295-9500</span>
                 </li>
                 <li className="flex items-start gap-3">
                     <MapPin className="h-4 w-4 text-primary mt-1 flex-shrink-0" />
-                    <span className="text-secondary-foreground leading-relaxed" style={{lineHeight: 1.6}}>IFSULDEMINAS<br/>R. Ituiutaba, 85<br/>Machado, MG 37750-000</span>
+                    <span className="text-secondary-foreground leading-relaxed" style={{lineHeight: 1.6}}>IFSULDEMINAS <br/>Machado, MG 37750-000</span>
                 </li>
             </ul>
             <div className="flex space-x-4 mt-6">

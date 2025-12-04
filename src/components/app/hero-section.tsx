@@ -36,7 +36,7 @@ export default function HeroSection() {
             variant="outline"
             className="w-full sm:w-auto border-2 border-gold text-gold bg-transparent font-heading font-bold py-4 px-8 rounded-md transition-all duration-smooth hover:bg-gold hover:text-deep-black shadow-md hover:shadow-lg text-base md:text-lg"
           >
-            <Link href="#sobre">
+            <Link href="#welcome-section">
               Saiba Mais
             </Link>
           </Button>

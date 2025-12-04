@@ -28,12 +28,12 @@ const infoCards = [
     {
       icon: <Phone className="h-8 w-8 text-black" />,
       title: 'Telefone',
-      text: '(35) 3291-0000',
+      text: '(35) 3295-9500',
     },
     {
       icon: <MapPin className="h-8 w-8 text-black" />,
       title: 'Endereço',
-      text: 'IFSULDEMINAS Campus Machado, R. Ituiutaba, 85 - Machado, MG',
+      text: 'IFSULDEMINAS Campus Machado, Machado, MG',
     },
 ];
 

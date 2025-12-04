@@ -57,14 +57,14 @@ export default function WelcomeSection() {
                 </div>
               ))}
             </div>
-            <div className="mt-4">
+            {/* <div className="mt-4">
                <Link 
               href="/sobre" 
               className="inline-flex items-center gap-2 bg-primary text-white font-heading font-bold py-2 px-4 rounded-md transition-all duration-smooth hover:bg-opacity-90"
             >
               Explore NEABI
             </Link>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
