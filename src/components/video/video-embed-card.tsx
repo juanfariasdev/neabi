@@ -1,18 +1,13 @@
 "use client";
 
-import React, { useEffect, useRef, useState, useCallback } from "react";
+import React, { useEffect, useRef, useState, useCallback, useMemo } from "react";
 import dynamic from "next/dynamic";
 import { Video } from "@/lib/prismic-utils";
 import { Badge } from "@/components/ui/badge";
 import { TikTokIcon, InstagramIcon } from "./video-icons";
-import { ExternalLink, Loader2, AlertCircle } from "lucide-react";
+import { ExternalLink, Loader2 } from "lucide-react";
 
-// Dynamic imports with ssr: false ensure no hydration mismatches
-const TikTokEmbed = dynamic(
-  () => import("react-social-media-embed").then((mod) => mod.TikTokEmbed),
-  { ssr: false }
-);
-
+// Dynamic import for Instagram with ssr: false to prevent hydration mismatches
 const InstagramEmbed = dynamic(
   () => import("react-social-media-embed").then((mod) => mod.InstagramEmbed),
   { ssr: false }
@@ -22,6 +17,14 @@ export function getTikTokUsername(url: string): string {
   if (!url) return "@tiktok";
   const match = url.match(/@([a-zA-Z0-9_.-]+)/);
   return match ? `@${match[1]}` : "@tiktok";
+}
+
+export function extractTikTokVideoId(url: string): string | null {
+  if (!url) return null;
+  const match = url.match(/\/video\/(\d+)/);
+  if (match) return match[1];
+  const lastSegment = url.split("?")[0].split("/").filter(Boolean).pop();
+  return lastSegment && /^\d+$/.test(lastSegment) ? lastSegment : null;
 }
 
 interface VideoEmbedCardProps {
@@ -49,6 +52,10 @@ export function VideoEmbedCard({
   const username = isTikTok ? getTikTokUsername(video.url) : "Instagram Reel";
   const estimatedMinHeight = isTikTok ? "min-h-[580px]" : "min-h-[480px]";
 
+  const tiktokVideoId = useMemo(() => {
+    return isTikTok ? extractTikTokVideoId(video.url) : null;
+  }, [isTikTok, video.url]);
+
   const notifyReady = useCallback(() => {
     if (!notifiedRef.current) {
       notifiedRef.current = true;
@@ -73,7 +80,7 @@ export function VideoEmbedCard({
 
     if (!isActive) return;
 
-    // Advance queue after 1.5s to ensure sequential flow continues smoothly
+    // Advance queue after 1.5s to ensure sequential flow continues smoothly even if network is slow
     const fallbackTimer = setTimeout(notifyReady, 1500);
 
     const container = containerRef.current;
@@ -192,11 +199,23 @@ export function VideoEmbedCard({
         {isMounted && isActive && (
           <div className="w-[325px] flex flex-col justify-center items-center">
             {isTikTok ? (
-              <TikTokEmbed
-                url={video.url}
-                width={325}
-                retryDisabled={true}
-              />
+              tiktokVideoId ? (
+                <iframe
+                  height="578"
+                  width="325"
+                  src={`https://www.tiktok.com/player/v1/${tiktokVideoId}?embed_from=webapp_share&music_info=1&description=1&autoplay=0&muted=1`}
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; fullscreen; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                  loading="lazy"
+                  className="w-[325px] h-[578px] rounded-2xl border-0"
+                  onLoad={notifyReady}
+                />
+              ) : (
+                <div className="p-8 text-center text-sm text-muted-foreground">
+                  ID do vídeo TikTok não encontrado
+                </div>
+              )
             ) : (
               <InstagramEmbed
                 url={video.url}
