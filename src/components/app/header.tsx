@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
@@ -11,15 +12,17 @@ import LogoImg from '@/assets/logo.png';
 import Image from 'next/image';
 
 const navLinks = [
-  { name: 'Início', href: '#hero-section' },
-  { name: 'Sobre', href: '#welcome-section' },
-  { name: 'Pilares', href: '#pillars-section' },
-  { name: 'Impacto', href: '#stats-section' },
-  { name: 'Histórico', href: '#history-timeline-section' },
-  { name: 'Contato', href: '#contact-section' },
+  { name: 'Início', href: '/#hero-section' },
+  { name: 'Sobre', href: '/#welcome-section' },
+  { name: 'Pilares', href: '/#pillars-section' },
+  { name: 'Impacto', href: '/#stats-section' },
+  { name: 'Histórico', href: '/#history-timeline-section' },
+  { name: 'Vídeos', href: '/videos' },
+  { name: 'Contato', href: '/#contact-section' },
 ];
 
 export default function Header() {
+  const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState<string>('');
@@ -33,8 +36,6 @@ export default function Header() {
   }, []);
 
   useEffect(() => {
-
-    const observers: IntersectionObserver[] = [];
     const options = {
       root: null,
       rootMargin: '-40% 0px -40% 0px',
@@ -50,12 +51,28 @@ export default function Header() {
     }, options);
 
     navLinks.forEach((link) => {
-      const el = document.querySelector(link.href);
-      if (el) observer.observe(el);
+      const hashIndex = link.href.indexOf('#');
+      if (hashIndex !== -1) {
+        const hash = link.href.substring(hashIndex);
+        const el = document.querySelector(hash);
+        if (el) observer.observe(el);
+      }
     });
 
     return () => observer.disconnect();
-  }, []);
+  }, [pathname]);
+
+  const isLinkActive = (href: string) => {
+    if (href === '/videos') {
+      return pathname === '/videos';
+    }
+    const hashIndex = href.indexOf('#');
+    if (hashIndex !== -1) {
+      const hash = href.substring(hashIndex);
+      return activeSection === hash;
+    }
+    return pathname === href;
+  };
 
   return (
     <header
@@ -72,21 +89,24 @@ export default function Header() {
           </Link>
 
           <nav className="hidden lg:flex items-center space-x-8">
-            {navLinks.map((link) => (
-              <Link
-                key={link.name}
-                href={link.href}
-                className={cn(
-                  "font-accent text-sm font-bold transition-colors",
-                  activeSection === link.href
-                    ? 'text-primary underline'
-                    : 'text-foreground hover:text-primary'
-                )}
-                aria-current={activeSection === link.href ? 'page' : undefined}
-              >
-                {link.name}
-              </Link>
-            ))}
+            {navLinks.map((link) => {
+              const active = isLinkActive(link.href);
+              return (
+                <Link
+                  key={link.name}
+                  href={link.href}
+                  className={cn(
+                    "font-accent text-sm font-bold transition-colors",
+                    active
+                      ? 'text-primary underline'
+                      : 'text-foreground hover:text-primary'
+                  )}
+                  aria-current={active ? 'page' : undefined}
+                >
+                  {link.name}
+                </Link>
+              );
+            })}
           </nav>
           <div className="lg:hidden">
             <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
@@ -107,20 +127,25 @@ export default function Header() {
                     </div>
                   </SheetTitle>
                   <nav className="flex flex-col space-y-4 p-6">
-                    {navLinks.map((link) => (
-                      <Link
-                        key={link.name}
-                        href={link.href}
-                        className={cn(
-                          "font-accent text-lg font-bold transition-colors py-2",
-                          activeSection === link.href ? 'text-primary underline' : 'text-foreground hover:text-primary'
-                        )}
-                        onClick={() => setIsMobileMenuOpen(false)}
-                        aria-current={activeSection === link.href ? 'page' : undefined}
-                      >
-                        {link.name}
-                      </Link>
-                    ))}
+                    {navLinks.map((link) => {
+                      const active = isLinkActive(link.href);
+                      return (
+                        <Link
+                          key={link.name}
+                          href={link.href}
+                          className={cn(
+                            "font-accent text-lg font-bold transition-colors py-2",
+                            active
+                              ? 'text-primary underline'
+                              : 'text-foreground hover:text-primary'
+                          )}
+                          onClick={() => setIsMobileMenuOpen(false)}
+                          aria-current={active ? 'page' : undefined}
+                        >
+                          {link.name}
+                        </Link>
+                      );
+                    })}
                   </nav>
                 </div>
               </SheetContent>

@@ -21,8 +21,19 @@ export interface TimelineEvent {
 }
 
 export interface Video {
+  id: string;
   type: "tiktok" | "instagram";
   url: string;
+  firstPublicationDate: string;
+}
+
+export interface PaginatedVideos {
+  videos: Video[];
+  total: number;
+  page: number;
+  pageSize: number;
+  totalPages: number;
+  hasMore: boolean;
 }
 
 // Helper to map Prismic documents to application interfaces
@@ -60,14 +71,104 @@ const mapTimelineEvent = (doc: prismic.PrismicDocument): TimelineEvent => {
 
 const mapVideo = (doc: prismic.PrismicDocument): Video => {
   const { data } = doc;
-  const {type, url} = data;
+  const { type, url } = data;
 
-  const Video = {
-    type: String(type).toLocaleLowerCase(),
-    url,
-  } as Video
+  const rawType = String(type || "").toLowerCase().trim();
+  const normalizedType: "tiktok" | "instagram" = rawType.includes("tiktok")
+    ? "tiktok"
+    : "instagram";
 
-  return Video;
+  return {
+    id: doc.id,
+    type: normalizedType,
+    url: String(url || "").trim(),
+    firstPublicationDate: doc.first_publication_date || new Date().toISOString(),
+  };
+};
+
+const fetchVideosFromPrismic = async (): Promise<Video[]> => {
+  const client = createPrismicClient();
+  try {
+    const response = await client.getByType("post", {
+      orderings: [
+        {
+          field: "document.first_publication_date",
+          direction: "desc",
+        },
+      ],
+      pageSize: 100,
+    });
+    return response.results.map(mapVideo);
+  } catch (error) {
+    console.error("Failed to fetch videos from Prismic:", error);
+    return [];
+  }
+};
+
+let cachedVideosFetcher: (() => Promise<Video[]>) | null = null;
+
+export const getVideos = async (): Promise<Video[]> => {
+  if (typeof window === "undefined") {
+    try {
+      if (!cachedVideosFetcher) {
+        const { unstable_cache } = await import("next/cache");
+        cachedVideosFetcher = unstable_cache(
+          fetchVideosFromPrismic,
+          ["prismic-all-videos"],
+          { revalidate: 3600, tags: ["videos"] }
+        );
+      }
+      return await cachedVideosFetcher();
+    } catch {
+      return await fetchVideosFromPrismic();
+    }
+  }
+  return await fetchVideosFromPrismic();
+};
+
+export const getLatestVideosByPlatform = async (limit = 5) => {
+  const allVideos = await getVideos();
+  const tiktok = allVideos
+    .filter((v) => v.type === "tiktok")
+    .slice(0, limit);
+  const instagram = allVideos
+    .filter((v) => v.type === "instagram")
+    .slice(0, limit);
+
+  return { tiktok, instagram };
+};
+
+export const getPaginatedVideos = async ({
+  type = "all",
+  page = 1,
+  pageSize = 6,
+}: {
+  type?: "all" | "tiktok" | "instagram";
+  page?: number;
+  pageSize?: number;
+} = {}): Promise<PaginatedVideos> => {
+  const allVideos = await getVideos();
+  const filtered =
+    type === "all"
+      ? allVideos
+      : allVideos.filter((v) => v.type === type);
+
+  const total = filtered.length;
+  const safePage = Math.max(1, page);
+  const safePageSize = Math.max(1, pageSize);
+  const totalPages = Math.ceil(total / safePageSize) || 1;
+  const startIndex = (safePage - 1) * safePageSize;
+  const videos = filtered.slice(startIndex, startIndex + safePageSize);
+  const hasMore = safePage < totalPages;
+
+  return {
+    videos,
+    total,
+    page: safePage,
+    pageSize: safePageSize,
+    totalPages,
+    hasMore,
+  };
 };
 
 export const getBlogPosts = async (): Promise<BlogPost[]> => {
@@ -103,17 +204,4 @@ export const getTimelineEvents = async (): Promise<TimelineEvent[]> => {
   }
 };
 
-export const getVideos = async (): Promise<Video[]> => {
-  const client = createPrismicClient();
-  try {
-    // Assuming 'post' type is used for videos/social media
-    const response = await client.getByType("post", {
-      pageSize: 10,
-    });
-    // console.log("Fetched video documents:", response.results);
-    return response.results.map(mapVideo);
-  } catch (error) {
-    console.error("Failed to fetch videos:", error);
-    return [];
-  }
-};
+
